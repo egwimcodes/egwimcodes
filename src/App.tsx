@@ -1,5 +1,5 @@
 import './App.css'
-import { Navbar, Header, Aboutme, Services, Portfolio, Contact } from './containers'
+import { Navbar, Header, Aboutme, Services, Portfolio, Contact, Footer } from './containers'
 
 function App() {
   return (
@@ -10,6 +10,7 @@ function App() {
     <Services />
     <Portfolio />
     <Contact />
+    <Footer />
    </>
   )
 }
