@@ -491,6 +491,11 @@ span {
     grid-template-columns: 1fr;
   }
 
+  .home-image img{
+    width: 100VW;
+  }
+
+
 }
 
 @media (max-width: 450px) {

@@ -97,8 +97,8 @@ function Header() {
         <a href="#" className="btn">Download CV</a>
       </div>
 
-      <div className="home-image">
-          <img src={logo} alt=""/>
+      <div className="home-image" id='home-image'> 
+          <img src={logo} alt=""  />
         </div>
     </div>
     </>
