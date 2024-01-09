@@ -1,7 +1,18 @@
 import logo from '../../assets/images/home.png'
 import { useEffect, useState } from 'react';
+import ScrollReveal from 'scrollreveal'
 
 function Header() {
+  ScrollReveal({
+    reset: true,
+    distance: '60px',
+    duration: 2500,
+    delay: 400
+  })
+  ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
+  ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
+  ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
+  ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
 
   const [toggleMenu, setToggleMenu] = useState(false)
   
@@ -98,7 +109,7 @@ function Header() {
       </div>
 
       <div className="home-image" id='home-image'> 
-          <img src={logo} alt=""  />
+          <img src={logo} alt=""   />
         </div>
     </div>
     </>
