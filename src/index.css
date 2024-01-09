@@ -495,6 +495,17 @@ span {
     width: 100VW;
   }
 
+  .contact{
+    margin: 0 1.5rem ;
+  }
+
+  .footer {
+    flex-direction: column-reverse;
+  }
+
+  .footer-iconTop {
+    padding: 1rem;
+  }
 
 }
 
@@ -504,6 +515,10 @@ span {
   }
   .contact form .input-box input {
     width: 100%;
+  }
+
+  .footer {
+    flex-direction: column-reverse;
   }
 
 }

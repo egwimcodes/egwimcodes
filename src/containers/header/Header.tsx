@@ -60,19 +60,19 @@ function Header() {
       <div className="navbar __mobile" id="menu" style={{display: toggleMenu ? 'block' : 'none'}}> 
 
         <a href="#home" className={activeLink === 'home' || activeLink === '' ? 'active' : ''}
-         onClick={() => setActiveLink('home')}>
+         onClick={() => {setActiveLink('home'); setToggleMenu(false)}}>
           Home
         </a>
-        <a href="#about" className={activeLink === 'about' ? 'active' : ''} onClick={() => setActiveLink('about')}>
+        <a href="#about" className={activeLink === 'about' ? 'active' : ''} onClick={() => {setActiveLink('about'); setToggleMenu(false)}}>
           About
         </a>
-        <a href="#services" className={activeLink === 'services' ? 'active' : ''} onClick={() => setActiveLink('services')}>
+        <a href="#services" className={activeLink === 'services' ? 'active' : ''} onClick={() => {setActiveLink('services'); setToggleMenu(false)}}>
           Services
         </a>
-        <a href="#portfolio" className={activeLink === 'portfolio' ? 'active' : ''} onClick={() => setActiveLink('portfolio')}>
+        <a href="#portfolio" className={activeLink === 'portfolio' ? 'active' : ''} onClick={() => {setActiveLink('portfolio'); setToggleMenu(false)}}>
           Portfolio
         </a>
-        <a href="#contact" className={activeLink === 'contact' ? 'active' : ''} onClick={() => setActiveLink('contact')}>
+        <a href="#contact" className={activeLink === 'contact' ? 'active' : ''} onClick={() => {setActiveLink('contact'); setToggleMenu(false)}}>
           Contact
         </a>
       </div>
