@@ -2,7 +2,7 @@ import about from '../../assets/images/about.png'
 function Aboutme() {
   return (
     <>
-    <section className="about" id="about">
+    <div className="about section" id="about">
       <div className="about-img">
         <img src={about} alt=""/>
       </div>
@@ -14,7 +14,7 @@ function Aboutme() {
         Magnam, maiores minima! Est incidunt accusamus doloremque, mollitia qui voluptatem reprehenderit dolore doloribus dolorum nobis labore ipsum magni quo nisi, sed assumenda sit saepe voluptatibus delectus soluta amet ea! Velit.</p>
         <a href="#" className="btn">Download CV</a>
       </div>
-    </section>
+    </div>
     </>
     )
 }

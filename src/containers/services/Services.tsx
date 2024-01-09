@@ -2,7 +2,7 @@
 function Services() {
   return (
    <>
-   <section className="services" id="services">
+   <div className="services section" id="services">
      <h2 className="heading">Our <span>Services</span></h2>
      <div className="services-container">
        <div className="services-box">
@@ -29,7 +29,7 @@ function Services() {
      </div>
 
 
-   </section>
+   </div>
    </>
   )
 }

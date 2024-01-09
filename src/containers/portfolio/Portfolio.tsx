@@ -2,7 +2,7 @@ import { portfolio1, portfolio2, portfolio3, portfolio4, portfolio5, portfolio6 
 function portfolio() {
   return (
     <>
-      <section className="portfolio" id="portfolio">
+      <div className="portfolio section" id="portfolio">
         <h2 className="heading">Latest <span>Projects</span></h2>
 
         <div className="portfolio-container">
@@ -91,7 +91,7 @@ function portfolio() {
 
         </div>
 
-      </section>
+      </div>
     </>
   )
 }
