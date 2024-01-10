@@ -1,6 +1,7 @@
 import logo from '../../assets/images/home.png'
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import ScrollReveal from 'scrollreveal'
+import Typed from 'typed.js';
 
 function Header() {
   ScrollReveal({
@@ -41,6 +42,21 @@ function Header() {
     }
   }, [activeLink]); // Run this effect only once when the component mounts
 
+
+  // Create reference to store the DOM element containing the animation
+  const el = useRef(null);
+
+  useEffect(() => {
+    const typed = new Typed(el.current, {
+      strings: ['Frontend Developer.', 'Backend Developer.', 'Python Developer.', 'Gamer 🎮.', 'Frontend Developer.', 'Backend Developer.', 'Python Developer.', 'Gamer 🎮.', 'Frontend Developer.', 'Backend Developer.', 'Python Developer.', 'Gamer 🎮.' ],
+      typeSpeed: 50,
+    });
+
+    return () => {
+      // Destroy Typed instance during cleanup to stop animation
+      typed.destroy();
+    };
+  }, []);
 
   return (
     <>
@@ -96,7 +112,7 @@ function Header() {
       <div className="home-content">
         <h3> Hello, It's Me</h3>
         <h1> Wisdom Egwim</h1>
-        <h3>And I'm a <span>Full Stack Developer</span></h3>
+        <h3>And I'm a <span ref={el} className="typed"></span></h3>
         <p>High level experience in web design and development knowledge, producing quality work.</p>
         <div className="social-media">
           <a href="#"><i className='bx bxl-github'></i></a>
@@ -109,7 +125,7 @@ function Header() {
       </div>
 
       <div className="home-image" id='home-image'> 
-          <img src={logo} alt=""   />
+          <img src={logo} alt="" />
         </div>
     </div>
     </>
