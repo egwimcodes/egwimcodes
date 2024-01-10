@@ -61,7 +61,7 @@ function Header() {
   return (
     <>
     <div className="header">
-      <a href="#" className="logo"> Portfolio</a>
+      <a href="#" className="logo">Wisdom Egwim</a>
       {toggleMenu ? <i className='bx bx-x' onClick={() => (setToggleMenu(false))} id="menu-icon"></i> : <i className='bx bx-menu-alt-right' onClick={() => (setToggleMenu(true))} id="menu-icon"></i>}
 
 
