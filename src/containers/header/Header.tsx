@@ -2,18 +2,13 @@ import logo from '../../assets/images/home.png'
 import { useEffect, useState, useRef } from 'react';
 // import ScrollReveal from 'scrollreveal'
 import Typed from 'typed.js';
-
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 function Header() {
-  // ScrollReveal({
-  //   reset: true,
-  //   distance: '60px',
-  //   duration: 2500,
-  //   delay: 400
-  // })
-  // ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
-  // ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
-  // ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
-  // ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
+
+  useEffect(() => {
+    Aos.init({duration: 2000});
+  }, [])
 
   const [toggleMenu, setToggleMenu] = useState(false)
   
@@ -48,7 +43,7 @@ function Header() {
 
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ['Frontend Developer.', 'Backend Developer.', 'Python Developer.', 'Gamer 🎮.', 'Frontend Developer.', 'Backend Developer.', 'Python Developer.', 'Gamer 🎮.', 'Frontend Developer.', 'Backend Developer.', 'Python Developer.', 'Gamer 🎮.' ],
+      strings: ['Full Stack Developer.', 'Mobile Developer.', 'Python Developer.', 'Gamer 🎮.', 'Full Stack Developer.', 'Mobile Developer.', 'Python Developer.', 'Gamer 🎮.','Full Stack Developer.', 'Mobile Developer.', 'Python Developer.', 'Gamer 🎮.','Full Stack Developer.', 'Mobile Developer.', 'Python Developer.', 'Gamer 🎮.', ],
       typeSpeed: 50,
     });
 
@@ -110,10 +105,10 @@ function Header() {
    
     <div className="home section" id="home">
       <div className="home-content">
-        <h3> Hello, It's Me</h3>
-        <h1> Wisdom Egwim</h1>
+        <h3 data-aos="fade-up">Hello, It's Me </h3>
+        <h1>Wisdom Egwim</h1>
         <h3>And I'm a <span ref={el} className="typed"></span></h3>
-        <p>High level experience in web design and development knowledge, producing quality work.</p>
+        <p>Recognized for a high level of competence in both web development and mobile development, consistently delivering top-tier work.</p>
         <div className="social-media">
           <a href="#"><i className='bx bxl-github'></i></a>
           <a href="#"><i className="bx bxl-facebook"></i></a>
@@ -133,3 +128,7 @@ function Header() {
 }
 
 export default Header
+
+// I'm a passionate  Full Stack Developer from Nigeria. I have experience in Web Development, Mobile  and software development in general. I have a degree in Information Systems and I am currently studying to become a Full Stack Developer and Cyber Security Expert.
+
+//Meet Wisdom, an ambitious developer with expertise in web, mobile, and software development. Despite lacking a formal degree, his proficiency shines through in the projects he has independently conceived and brought to life, showcasing a determination to excel in the field.
