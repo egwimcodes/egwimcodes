@@ -9,7 +9,7 @@ function portfolio() {
           <div className="portfolio-box">
             <img src={portfolio1} alt="" />
             <div className="portfolio-layer">
-              <h4>Web Design</h4>
+              <h4>Dyingearth</h4>
               <p>
                 High level experience in web design and development knowledge, producing quality work.
               </p>
@@ -23,7 +23,7 @@ function portfolio() {
           <div className="portfolio-box">
             <img src={portfolio2} alt="" />
             <div className="portfolio-layer">
-              <h4>Web Design</h4>
+              <h4>GPT 4</h4>
               <p>
                 High level experience in web design and development knowledge, producing quality work.
               </p>
@@ -36,7 +36,7 @@ function portfolio() {
           <div className="portfolio-box">
             <img src={portfolio3} alt="" />
             <div className="portfolio-layer">
-              <h4>Web Design</h4>
+              <h4>Portfolio</h4>
               <p>
                 High level experience in web design and development knowledge, producing quality work.
               </p>
