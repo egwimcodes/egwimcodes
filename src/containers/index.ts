@@ -1,3 +1,4 @@
+export {  default as Preloader} from './preloader/Preloader'
 export {  default as Header} from './header/Header'
 export {  default as Aboutme} from './aboutme/Aboutme'
 export {  default as Services} from './services/Services'

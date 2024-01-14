@@ -48,6 +48,7 @@ function Header() {
     });
 
     return () => {
+      
       // Destroy Typed instance during cleanup to stop animation
       typed.destroy();
     };
@@ -104,8 +105,8 @@ function Header() {
    
    
     <div className="home section" id="home">
-      <div className="home-content">
-        <h3 data-aos="fade-up">Hello, It's Me </h3>
+      <div className="home-content" data-aos="fade-down">
+        <h3 >Hello, It's Me </h3>
         <h1>Wisdom Egwim</h1>
         <h3>And I'm a <span ref={el} className="typed"></span></h3>
         <p>Recognized for a high level of competence in both web development and mobile development, consistently delivering top-tier work.</p>
