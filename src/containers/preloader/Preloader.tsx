@@ -14,7 +14,7 @@ function Preloader() {
           self.destroy(); // Destroy the first Typed instance
   
           // Create a new Typed instance for the second text
-          const secondTyped = new Typed(el.current, {
+          new Typed(el.current, {
             strings: ['Welcome to Wisdom\'s Portfolio...'],
             typeSpeed: 50,
             onComplete: () => {
