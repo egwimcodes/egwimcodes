@@ -39,19 +39,30 @@ function Header() {
 
 
   // Create reference to store the DOM element containing the animation
+
   const el = useRef(null);
 
   useEffect(() => {
-    const typed = new Typed(el.current, {
-      strings: ['Full Stack Developer.', 'Mobile Developer.', 'Python Developer.', 'Gamer 🎮.', 'Full Stack Developer.', 'Mobile Developer.', 'Python Developer.', 'Gamer 🎮.','Full Stack Developer.', 'Mobile Developer.', 'Python Developer.', 'Gamer 🎮.','Full Stack Developer.', 'Mobile Developer.', 'Python Developer.', 'Gamer 🎮.', ],
-      typeSpeed: 50,
-    });
-
-    return () => {
+    // Function to initialize Typed after a delay
+    const initializeTyped = () => {
+      const typed = new Typed(el.current, {
+        strings: ['Full Stack Developer.', 'Mobile Developer.', 'Python Developer.', 'Gamer 🎮.', 'Full Stack Developer.', 'Mobile Developer.', 'Python Developer.', 'Gamer 🎮.','Full Stack Developer.', 'Mobile Developer.', 'Python Developer.', 'Gamer 🎮.','Full Stack Developer.', 'Mobile Developer.', 'Python Developer.', 'Gamer 🎮.', ],
+        typeSpeed: 50,
+      });
       
       // Destroy Typed instance during cleanup to stop animation
-      typed.destroy();
+      return () => {
+        typed.destroy();
+      };
     };
+
+    // Set a timeout to delay the Typed initialization
+    const timeoutId = setTimeout(() => {
+      initializeTyped();
+    }, 1000); // 1000 milliseconds (1 second)
+
+    // Clear the timeout in case the component unmounts before the delay
+    return () => clearTimeout(timeoutId);
   }, []);
 
   return (
