@@ -1,4 +1,4 @@
-import about from '../../assets/images/about.png'
+import about from '../../assets/images/Wisdom Egwim About.png'
 function Aboutme() {
   return (
     <>

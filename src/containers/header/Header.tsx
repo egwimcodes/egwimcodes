@@ -1,4 +1,4 @@
-import logo from '../../assets/images/home.png'
+import logo from '../../assets/images/Wisdom Egwim.png'
 import { useEffect, useState, useRef } from 'react';
 // import ScrollReveal from 'scrollreveal'
 import Typed from 'typed.js';
