@@ -11,9 +11,9 @@ function portfolio() {
             <div className="portfolio-layer">
               <h4>Dyingearth</h4>
               <p>
-                High level experience in web design and development knowledge, producing quality work.
+                Soil monitoring python (Django app), Insight into soil health.
               </p>
-              <a href="#">
+              <a href="https://dying-earth.vercel.app">
                 <i className="bx bx-link bx-link-external"></i>
               </a>
             </div>
@@ -23,11 +23,11 @@ function portfolio() {
           <div className="portfolio-box">
             <img src={portfolio2} alt="" />
             <div className="portfolio-layer">
-              <h4>GPT 4</h4>
+              <h4>React Portfolio</h4>
               <p>
-                High level experience in web design and development knowledge, producing quality work.
+                React Portfolio site, Cool animations and responsive design.
               </p>
-              <a href="#">
+              <a href="https://egwimcodes.netlify.app">
                 <i className="bx bx-link bx-link-external"></i>
               </a>
             </div>
@@ -36,11 +36,11 @@ function portfolio() {
           <div className="portfolio-box">
             <img src={portfolio3} alt="" />
             <div className="portfolio-layer">
-              <h4>Portfolio</h4>
+              <h4>GPT 4</h4>
               <p>
-                High level experience in web design and development knowledge, producing quality work.
+                React GPT 4 site, Cool design and responsive design.
               </p>
-              <a href="#">
+              <a href="https://gpt4landing.netlify.app">
                 <i className="bx bx-link bx-link-external"></i>
               </a>
             </div>
@@ -64,11 +64,11 @@ function portfolio() {
           <div className="portfolio-box">
             <img src={portfolio5} alt="" />
             <div className="portfolio-layer">
-              <h4>Web Design</h4>
+              <h4>Portfolio Site</h4>
               <p>
-                High level experience in web design and development knowledge, producing quality work.
+                Plain HTML, CSS and JS, profesional portfolio site, fully responsive.
               </p>
-              <a href="#">
+              <a href="https://snowwisdom.netlify.app">
                 <i className="bx bx-link bx-link-external"></i>
               </a>
             </div>
@@ -78,11 +78,11 @@ function portfolio() {
           <div className="portfolio-box">
             <img src={portfolio6} alt="" />
             <div className="portfolio-layer">
-              <h4>Web Design</h4>
+              <h4>Wordpress Blog</h4>
               <p>
-                High level experience in web design and development knowledge, producing quality work.
+                Wordpress Blog, High level experience in web development, producing quality work.
               </p>
-              <a href="#">
+              <a href="https://snowblogger.com">
                 <i className="bx bx-link bx-link-external"></i>
               </a>
             </div>
