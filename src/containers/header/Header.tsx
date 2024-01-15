@@ -46,7 +46,7 @@ function Header() {
     // Function to initialize Typed after a delay
     const initializeTyped = () => {
       const typed = new Typed(el.current, {
-        strings: ['Full Stack Developer.', 'Mobile Developer.', 'Python Developer.', 'Gamer 🎮.', 'Full Stack Developer.', 'Mobile Developer.', 'Python Developer.', 'Gamer 🎮.','Full Stack Developer.', 'Mobile Developer.', 'Python Developer.', 'Gamer 🎮.','Full Stack Developer.', 'Mobile Developer.', 'Python Developer.', 'Gamer 🎮.', 'Full Stack Developer.'],
+        strings: ['Full Stack Developer.', 'Mobile Developer.', 'Python Developer.', 'Gamer 🎮.', 'Full Stack Developer.', 'Mobile Developer.', 'Python Developer.', 'Gamer 🎮.','Full Stack Developer.', 'Mobile Developer.', 'Python Developer.', 'Gamer 🎮.','Full Stack Developer.', 'Mobile Developer.', 'Python Developer.', 'Full Stack Developer.'],
         typeSpeed: 50,
       });
       
@@ -122,11 +122,11 @@ function Header() {
         <h3>And I'm a <span ref={el} className="typed"></span></h3>
         <p>Recognized for a high level of competence in both web development and mobile development, consistently delivering top-tier work.</p>
         <div className="social-media">
-          <a href="#"><i className='bx bxl-github'></i></a>
-          <a href="#"><i className="bx bxl-facebook"></i></a>
-          <a href="#"><i className="bx bxl-twitter"></i></a>
-          <a href="#"><i className="bx bxl-instagram"></i></a>
-          <a href="#"><i className="bx bxl-linkedin"></i></a>
+          <a href="https://github.com/egwimcodes"><i className='bx bxl-github'></i></a>
+          <a href="https://www.facebook.com/egwimcodes"><i className="bx bxl-facebook"></i></a>
+          <a href="https://twitter.com/egwimcodes"><i className="bx bxl-twitter"></i></a>
+          <a href="https://www.instagram.com/egwimcodes"><i className="bx bxl-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/egwimcodes"><i className="bx bxl-linkedin"></i></a>
         </div>
         <a href="#" className="btn">Download CV</a>
       </div>
