@@ -46,7 +46,7 @@ function Header() {
     // Function to initialize Typed after a delay
     const initializeTyped = () => {
       const typed = new Typed(el.current, {
-        strings: ['Full Stack Developer.', 'Mobile Developer.', 'Python Developer.', 'Gamer 🎮.', 'Full Stack Developer.', 'Mobile Developer.', 'Python Developer.', 'Gamer 🎮.','Full Stack Developer.', 'Mobile Developer.', 'Python Developer.', 'Gamer 🎮.','Full Stack Developer.', 'Mobile Developer.', 'Python Developer.', 'Gamer 🎮.', ],
+        strings: ['Full Stack Developer.', 'Mobile Developer.', 'Python Developer.', 'Gamer 🎮.', 'Full Stack Developer.', 'Mobile Developer.', 'Python Developer.', 'Gamer 🎮.','Full Stack Developer.', 'Mobile Developer.', 'Python Developer.', 'Gamer 🎮.','Full Stack Developer.', 'Mobile Developer.', 'Python Developer.', 'Gamer 🎮.', 'Full Stack Developer.'],
         typeSpeed: 50,
       });
       
