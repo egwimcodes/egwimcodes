@@ -1,5 +1,6 @@
 import logo from '../../assets/images/Wisdom Egwim.png'
 import { useEffect, useState, useRef } from 'react';
+import cv from '../../../Wisdom Egwim Resume.pdf';
 // import ScrollReveal from 'scrollreveal'
 import Typed from 'typed.js';
 import Aos from 'aos';
@@ -128,7 +129,7 @@ function Header() {
           <a href="https://www.instagram.com/egwimcodes"><i className="bx bxl-instagram"></i></a>
           <a href="https://www.linkedin.com/in/egwimcodes"><i className="bx bxl-linkedin"></i></a>
         </div>
-        <a href="#" className="btn">Download CV</a>
+        <a href="" className="btn" download={cv}>Download CV</a>
       </div>
 
       <div className="home-image" id='home-image'> 

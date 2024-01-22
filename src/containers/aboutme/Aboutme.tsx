@@ -1,4 +1,6 @@
 import about from '../../assets/images/Wisdom Egwim About.png'
+import cv from '../../../Wisdom Egwim Resume.pdf';
+
 function Aboutme() {
   return (
     <>
@@ -21,7 +23,7 @@ function Aboutme() {
         <p>
         My commitment to following the latest tech trends showcases my readiness for long-lasting success as a developer
         </p>
-        <a href="#" className="btn">Download CV</a>
+        <a href="" className="btn" download={cv}>Download CV</a>
       </div>
     </div>
     </>
