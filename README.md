@@ -1,13 +1,9 @@
-<h1 align="center">Hi 👋, I'm Wisdom</h1>
-<h3 align="center">A passionate Software Developer fron Nigeria</h3>
-
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=egwimcodes&label=Profile%20views&color=0e75b6&style=flat" alt="egwimcodes" /> </p>
-
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=egwimcodes" alt="egwimcodes" /></a> </p>
+<h1 align="center">Hi 👋, I'm Wisdom Egwim</h1>
+<h3 align="center">A highly skilled and ambitious Software Developer from Nigeria</h3>
 
 <p align="left"> <a href="https://twitter.com/egwimcodes" target="blank"><img src="https://img.shields.io/twitter/follow/egwimcodes?logo=twitter&style=for-the-badge" alt="egwimcodes" /></a> </p>
 
-- 🔭 I’m currently working on **Private Flutter and Python Project**
+- 🔭 I’m currently working on **Private Flutter and Python Projects**
 
 - 🌱 I’m currently learning **Flutter Advernce Flutter**
 
