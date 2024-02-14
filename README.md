@@ -1,7 +1,13 @@
 <h1 align="center">Hi 👋, I'm Wisdom Egwim</h1>
-<h3 align="center">A highly skilled and ambitious Software Developer from Nigeria</h3>
 
-<p align="left"> <a href="https://twitter.com/egwimcodes" target="blank"><img src="https://img.shields.io/twitter/follow/egwimcodes?logo=twitter&style=for-the-badge" alt="egwimcodes" /></a> </p>
+<p align="center"> <a href="https://egwimcodes" target="blank"><img src="https://img.freepik.com/fotos-premium/retrato-de-programador-de-sucesso-desenvolvedor-de-jogos-ou-codificador-em-usa-laptop-de-computador-para-trabalhar-design-de-jogos-hacker-boy-generative-ai-cyber-gamer_117038-7602.jpg" alt="egwimcodes" /></a> </p>
+
+<hr>
+<h3 align="center">A highly skilled and ambitious Software Developer from Nigeria</h3>
+<hr>
+
+<img align="right" alt="Coding" width="400" src="https://egwimcodes.dev/assets/Wisdom%20Egwim-BWp9nYME.png" alt="egwimcodes">
+<p align="right"> <a href="https://twitter.com/egwimcodes" target="blank"><img src="https://img.shields.io/twitter/follow/egwimcodes?logo=twitter&style=for-the-badge" alt="egwimcodes" /></a> </p>
 
 - 🔭 I’m currently working on **Private Flutter and Python Projects**
 
