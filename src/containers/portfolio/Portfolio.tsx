@@ -13,7 +13,7 @@ function portfolio() {
               <p>
                 Soil monitoring python (Django app), Insight into soil health.
               </p>
-              <a href="https://dying-earth.vercel.app">
+              <a href="https://dyingearthcodes.onrender.com">
                 <i className="bx bx-link bx-link-external"></i>
               </a>
             </div>
