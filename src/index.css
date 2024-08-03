@@ -227,6 +227,33 @@ span {
   font-size: 1.6rem;
   margin: 1rem 0 3rem;
 }
+.technology_used{
+  width: 70%;
+  margin: 0 auto;
+}
+
+.technology_utilized_header{
+  color: var(--main-color);
+  font-size: 2.6rem;
+
+}
+
+.technology_ul{
+  font-size: 1.6rem;
+  list-style-type: circle;
+  color: var(--main-color);
+  margin: 2rem 0 3rem;
+  list-style-type: none;
+
+}
+
+.technology_li{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 2rem;
+}
 
 .portfolio {
   background: var(--second-bg-color);

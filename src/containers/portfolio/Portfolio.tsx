@@ -1,4 +1,4 @@
-import { portfolio1, portfolio2, portfolio3, portfolio4, portfolio5, portfolio6 } from "../../assets/images"
+import { portfolio1, portfolio2, portfolio3, portfolio4, portfolio5,  portfolio7, portfolio8, portfolio9, portfolio10, portfolio11  } from "../../assets/images"
 function portfolio() {
   return (
     <>
@@ -19,6 +19,47 @@ function portfolio() {
             </div>
 
           </div>
+          <div className="portfolio-box">
+            <img src={portfolio7} alt="" />
+            <div className="portfolio-layer">
+              <h4>Squidbonk</h4>
+              <p>
+                SQUIBONK is an innovative crypto project revolutionizing the ecosystem with its unique features.
+              </p>
+              <a href="https://dyingearthcodes.onrender.com">
+                <i className="bx bx-link bx-link-external"></i>
+              </a>
+            </div>
+
+          </div>
+
+          <div className="portfolio-box">
+            <img src={portfolio8} alt="" />
+            <div className="portfolio-layer">
+              <h4>GoodCoin</h4>
+              <p>
+                Telegram Bot and Tapping Game ..
+              </p>
+              <a href="https://t.me/theonlygoodcoin_bot/games?startapp=594387e8">
+                <i className="bx bx-link bx-link-external"></i>
+              </a>
+            </div>
+
+          </div>
+
+          <div className="portfolio-box">
+            <img src={portfolio4} alt="" />
+            <div className="portfolio-layer">
+              <h4>CashPoint</h4>
+              <p>
+                Flutter Fintech APP, Innovative fintech app for making secure transactions.
+              </p>
+              <a href="#">
+                <i className="bx bx-link bx-link-external"></i>
+              </a>
+            </div>
+
+          </div>
 
           <div className="portfolio-box">
             <img src={portfolio2} alt="" />
@@ -34,6 +75,20 @@ function portfolio() {
           </div>
 
           <div className="portfolio-box">
+            <img src={portfolio10} alt="" />
+            <div className="portfolio-layer">
+              <h4>Micdavmrei
+</h4>
+              <p>
+                Empowring Young People, Youth empowerment site
+              </p>
+              <a href="https://micdavmrei.com/index1.html">
+                <i className="bx bx-link bx-link-external"></i>
+              </a>
+            </div>
+
+          </div>
+          <div className="portfolio-box">
             <img src={portfolio3} alt="" />
             <div className="portfolio-layer">
               <h4>GPT 4</h4>
@@ -47,12 +102,18 @@ function portfolio() {
 
           </div>
 
+          
+          
+
+
+         
+
           <div className="portfolio-box">
-            <img src={portfolio4} alt="" />
+            <img src={portfolio9} alt="" />
             <div className="portfolio-layer">
-              <h4>Web Design</h4>
+              <h4>Scrap Enxor</h4>
               <p>
-                High level experience in web design and development knowledge, producing quality work.
+                Python Website SCrapper,  Scraping data from website
               </p>
               <a href="#">
                 <i className="bx bx-link bx-link-external"></i>
@@ -76,13 +137,13 @@ function portfolio() {
           </div>
 
           <div className="portfolio-box">
-            <img src={portfolio6} alt="" />
+            <img src={portfolio11} alt="" />
             <div className="portfolio-layer">
               <h4>Wordpress Blog</h4>
               <p>
                 Wordpress Blog, High level experience in web development, producing quality work.
               </p>
-              <a href="https://snowblogger.com">
+              <a href="https://nijasun.com/">
                 <i className="bx bx-link bx-link-external"></i>
               </a>
             </div>

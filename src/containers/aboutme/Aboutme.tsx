@@ -19,7 +19,7 @@ function Aboutme() {
 
         </p>
         <p>
-        With over 4 years of experience in software development, my proficiency shines through in the projects I have independently conceived and brought to life, showcasing a determination to excel in the field. Wisdom not only excels in crafting efficient code but also explores the intersection of software development with cutting-edge technologies, ensuring a forward-thinking approach to every endeavor. 
+        With over 4 years+ of experience in software development, my proficiency shines through in the projects I have independently conceived and brought to life, showcasing a determination to excel in the field. Wisdom not only excels in crafting efficient code but also explores the intersection of software development with cutting-edge technologies, ensuring a forward-thinking approach to every endeavor. 
         </p>
         <p>
         My commitment to following the latest tech trends showcases my readiness for long-lasting success as a developer
