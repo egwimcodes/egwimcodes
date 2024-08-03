@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import './App.css'
-import { Preloader, Header, Aboutme, Services, Portfolio, Contact, Footer } from './containers'
-function App() {
+import './App.css';
+import { Preloader, Header, Aboutme, Services, Portfolio, Contact, Footer } from './containers';
+import { Helmet } from 'react-helmet';
 
+function App() {
   const [loading, setLoading] = useState(true);
 
   // Simulate an asynchronous operation (e.g., fetching data)
@@ -20,21 +21,45 @@ function App() {
 
   return (
     <>
-    {loading ? (<Preloader />) : 
-    (
-      <>
-      <Header />
-      <Aboutme />
-      <Services />
-      <Portfolio />
-      <Contact />
-      <Footer />
-      </>
-      
-    )}
-      
+      <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Egwim Codes",
+              "url": "https://egwimcodes.com",
+              "image": "https://egwimcodes.com/Wisdom_Egwim.png",
+              "sameAs": [
+                "https://twitter.com/egwimcodes",
+                "https://www.linkedin.com/in/egwimcodes",
+                "https://github.com/egwimcodes",
+                "https://www.facebook.com/egwimcodes"
+              ],
+              "jobTitle": "Software Developer | Web Developer | Mobile Developer | ML & Robotics Enthusiast",
+              "worksFor": {
+                "@type": "Organizations | Company | Small & Large Enterprise",
+                "name": "Egwim Codes"
+              }
+            }
+          `}
+        </script>
+      </Helmet>
+
+      {loading ? (
+        <Preloader />
+      ) : (
+        <>
+          <Header />
+          <Aboutme />
+          <Services />
+          <Portfolio />
+          <Contact />
+          <Footer />
+        </>
+      )}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
