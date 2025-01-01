@@ -4,7 +4,7 @@ function Footer() {
     <>
     <div className="footer">
     <div className="footer-text">
-      <p>Copyright &copy; 2024 by Wisdom Egwim. All Rights Reserved.</p>
+      <p>Copyright &copy; 2021 by Wisdom Egwim. All Rights Reserved.</p>
       </div> 
 
     <div className="footer-iconTop">

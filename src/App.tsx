@@ -27,9 +27,9 @@ function App() {
             {
               "@context": "https://schema.org",
               "@type": "Person",
-              "name": "Egwim Codes",
-              "url": "https://egwimcodes.com",
-              "image": "https://egwimcodes.com/Wisdom_Egwim.png",
+              "name": "Wisdom Egwim",
+              "url": "https://egwimcodes.dev",
+              "image": "https://egwimcodes.dev/Wisdom-Egwim.png",
               "sameAs": [
                 "https://twitter.com/egwimcodes",
                 "https://www.linkedin.com/in/egwimcodes",
@@ -39,7 +39,7 @@ function App() {
               "jobTitle": "Software Developer | Web Developer | Mobile Developer | ML & Robotics Enthusiast",
               "worksFor": {
                 "@type": "Organizations | Company | Small & Large Enterprise",
-                "name": "Egwim Codes"
+                "name": "Wisdom Egwim"
               }
             }
           `}
