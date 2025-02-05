@@ -1,4 +1,3 @@
-import logo from '../../assets/images/Wisdom-Egwim.png'
 import { useEffect, useState, useRef } from 'react';
 import Resume from '/Wisdom-Egwim-Software-Developer-CV.pdf';
 // import ScrollReveal from 'scrollreveal'
@@ -47,9 +46,28 @@ function Header() {
     // Function to initialize Typed after a delay
     const initializeTyped = () => {
       const typed = new Typed(el.current, {
-        strings: ['Web and Mobile Solutions Expert', 'Full Stack Developer.', 'Mobile Developer.', 'Python Developer.', 'Web and Mobile Solutions Expert', 'Full Stack Developer.', 'Mobile Developer.', 'Python Developer.', 'Web and Mobile Solutions Expert', 'Full Stack Developer.', 'Mobile Developer.', 'Python Developer.', 'Web and Mobile Solutions Expert', 'Full Stack Developer.', 'Mobile Developer.', 'Python Developer.', 'Web and Mobile Solutions Expert', 'Full Stack Developer.'],
-        startDelay: 10,
-        typeSpeed: 50,
+        strings:
+          [
+            'Full-Stack Web &amp; Mobile Developer',
+            'Mobile Developer',
+            'Flutter Developer',
+            'React Native Developer',
+            'Node Developer',
+            'Python Developer',
+            'Full-Stack Web &amp; Mobile Developer',
+            'Mobile Developer',
+            'Flutter Developer',
+            'React Native Developer',
+            'Node Developer',
+            'Python Developer',
+          ]
+
+          
+         
+        
+        ,
+        startDelay: 7,
+        typeSpeed: 40,
       });
 
       // Destroy Typed instance during cleanup to stop animation
@@ -137,7 +155,7 @@ function Header() {
         </div>
 
         <div className="home-image" id='home-image'>
-          <img src={logo} alt="" />
+          <img src={"https://res.cloudinary.com/dregyxpbo/image/upload/v1738743889/Wisdom-Egwim_no0tch.png"} alt="" />
         </div>
       </div>
     </>
