@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+/* next-themes is configured with attribute="class", so the dark variant keys
+   off the .dark class rather than the OS media query. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Brand palette, straight from the brand sheet. */
+  --color-graphite: #0a0f1a;
+  --color-cyan: #00d1ff;
+  --color-tech-blue: #0b31ff;
+  --color-silver: #e5e7eb;
+
+  --font-display: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Semantic surfaces, resolved per theme below. */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-elevated: var(--elevated);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+}
+
+:root {
+  --bg: #ffffff;
+  --surface: #f5f7fb;
+  --elevated: #ffffff;
+  --fg: #0a0f1a;
+  --muted: #55607a;
+  --line: rgb(10 15 26 / 0.12);
+
+  /* The monogram's second C. Flat graphite on light, matching the brand sheet;
+     the silver gradient would disappear against white. */
+  --ec-second-c: var(--color-graphite);
+}
+
+.dark {
+  --bg: #060a12;
+  --surface: #0a0f1a;
+  --elevated: #0e1626;
+  --fg: #e8ecf4;
+  --muted: #93a1bc;
+  --line: rgb(229 231 235 / 0.12);
+
+  --ec-second-c: url(#ec-grad-silver);
+}
+
+/* Fills for the inlined EC monogram. The cyan gradient holds on both themes. */
+.ec-c1 {
+  fill: url(#ec-grad-cyan);
+}
+
+.ec-c2 {
+  fill: var(--ec-second-c);
+}
+
+@keyframes ec-caret {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.ec-caret {
+  animation: ec-caret 0.7s step-end infinite;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Clears the sticky header when jumping to a section. */
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--color-cyan) 30%, transparent);
+    color: var(--fg);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-cyan);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@utility brand-text-gradient {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-cyan) 0%,
+    var(--color-tech-blue) 100%
+  );
+  background-clip: text;
+  color: transparent;
+}
+
+/* Hairline border that reads on both themes without needing a dark: variant. */
+@utility border-line {
+  border-color: var(--line);
+}

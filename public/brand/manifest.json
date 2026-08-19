@@ -1,0 +1,34 @@
+{
+  "generatedFrom": "public/brand/egwimcodes-EC-primary.svg",
+  "artworkBox": {
+    "x": 122,
+    "y": 279,
+    "width": 737.37,
+    "height": 463.7
+  },
+  "outputs": {
+    "app/icon.svg": {
+      "width": 512,
+      "height": 512,
+      "format": "svg"
+    },
+    "app/icon.png": {
+      "width": 512,
+      "height": 512,
+      "format": "png"
+    },
+    "app/apple-icon.png": {
+      "width": 180,
+      "height": 180,
+      "format": "png"
+    },
+    "public/brand/og.png": {
+      "width": 1200,
+      "height": 630,
+      "format": "png"
+    },
+    "components/ec-paths.ts": {
+      "paths": 4
+    }
+  }
+}

@@ -1,3 +1,60 @@
+# egwimcodes.dev
+
+Personal portfolio — Next.js (App Router) + Tailwind CSS v4 + Motion, on the egwimcodes brand.
+
+## Getting started
+
+```bash
+npm install
+cp .env.example .env.local   # fill in the EmailJS values
+npm run dev
+```
+
+| Script | Purpose |
+| --- | --- |
+| `npm run dev` | Dev server |
+| `npm run build` | Production build (`output: "standalone"`) |
+| `npm run start` | Serve the build |
+| `npm run lint` | ESLint |
+| `npm run brand:assets` | Regenerate the icons, OG image and monogram paths from the SVG master |
+
+## Structure
+
+```
+app/            layout, page, globals.css, robots.ts, sitemap.ts, icon.*, apple-icon.png
+components/     Nav, Hero, About, Services, Portfolio, Contact, Footer, Logo, Reveal…
+content/site.ts all copy: services, projects, socials, bio
+public/brand/   the SVG masters and the Open Graph image
+scripts/        brand asset pipeline + the Sora TTFs it outlines text with
+brand-src/      superseded raster comps, kept only as provenance
+```
+
+## Brand assets
+
+`public/brand/egwimcodes-EC-primary.svg` is the single source of truth for the EC
+monogram. `npm run brand:assets` reads it and regenerates everything derived from
+it — `app/icon.svg`, `app/icon.png`, `app/apple-icon.png`, the 1200x630
+`public/brand/og.png`, and `components/ec-paths.ts`, which is the path data the
+inlined `<EcMark>` renders. Rerun it after any change to the master; don't edit
+the outputs by hand.
+
+The mark is inlined rather than served as an image so its fills can follow the
+theme: the cyan C keeps the brand gradient on both themes, while the second C
+switches between the silver gradient and flat graphite via `--ec-second-c`. The
+wordmark is live Sora text, so there is no raster lockup to keep in sync.
+
+The OG card needs the wordmark as outlines because librsvg — which sharp renders
+SVG through — ignores embedded `@font-face` and falls back to a system font, so
+the pipeline converts it with `opentype.js` using the TTFs in `scripts/fonts/`.
+
+## Deployment
+
+`docker build` produces a standalone Node image serving on port 3000; the VPS
+workflow maps it to `127.0.0.1:3001`. The `NEXT_PUBLIC_EMAILJS_*` values are
+inlined at build time and must be passed as `--build-arg`.
+
+---
+
 <h1 align="center">Hi 👋, I'm Wisdom Egwim</h1>
 
 <p align="center"> <a href="https://egwimcodes" target="blank"><img src="https://img.freepik.com/fotos-premium/retrato-de-programador-de-sucesso-desenvolvedor-de-jogos-ou-codificador-em-usa-laptop-de-computador-para-trabalhar-design-de-jogos-hacker-boy-generative-ai-cyber-gamer_117038-7602.jpg" alt="egwimcodes" /></a> </p>
