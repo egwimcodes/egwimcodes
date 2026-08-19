@@ -16,8 +16,10 @@ export const site = {
 export const navLinks = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
+  { id: "skills", label: "Skills" },
   { id: "services", label: "Services" },
   { id: "portfolio", label: "Portfolio" },
+  { id: "experience", label: "Experience" },
   { id: "contact", label: "Contact" },
 ] as const;
 
@@ -70,6 +72,63 @@ export const about = {
   ],
 } as const;
 
+/** Canonical skill catalog — Skills section and Services cards both read from here. */
+export const skillGroups = [
+  {
+    id: "frontend",
+    label: "Frontend",
+    items: [
+      "ReactJS",
+      "Next.js",
+      "Web 3",
+      "Vue.js",
+      "Tailwind CSS",
+      "JavaScript",
+      "Bootstrap",
+    ],
+  },
+  {
+    id: "backend",
+    label: "Backend",
+    items: ["Python", "Django", "Node.js", "Express.js", "FastAPI", "Firebase"],
+  },
+  {
+    id: "mobile",
+    label: "Mobile",
+    items: ["Flutter", "React Native", "Dart"],
+  },
+  {
+    id: "aiMl",
+    label: "AI & ML",
+    items: [
+      "TensorFlow",
+      "PyTorch",
+      "ROS (Robot Operating System)",
+      "OpenCV",
+      "Arduino",
+    ],
+  },
+] as const;
+
+export type SkillGroupId = (typeof skillGroups)[number]["id"];
+export type SkillName = (typeof skillGroups)[number]["items"][number];
+
+const skillIndex = new Map<string, SkillGroupId>(
+  skillGroups.flatMap((group) =>
+    group.items.map((item) => [item, group.id] as [string, SkillGroupId]),
+  ),
+);
+
+/** Resolves named skills against the catalog so Services never drifts from Skills. */
+export function skills(...names: SkillName[]): string[] {
+  return names.map((name) => {
+    if (!skillIndex.has(name)) {
+      throw new Error(`Unknown skill "${name}" — add it to skillGroups first.`);
+    }
+    return name;
+  });
+}
+
 export type ServiceIcon = "globe" | "smartphone" | "cpu";
 
 export type Service = {
@@ -86,8 +145,8 @@ export const services: Service[] = [
     description:
       "Experience exceptional web development services that go beyond the ordinary. I specialize in creating responsive, innovative designs that enhance your online presence and help you stand out in today's digital landscape.",
     tech: {
-      frontend: ["ReactJS", "Next.js", "Web 3", "Vue.js", "Tailwind CSS"],
-      backend: ["Python", "Django", "Node.js", "Express.js"],
+      frontend: skills("ReactJS", "Next.js", "Web 3", "Vue.js", "Tailwind CSS"),
+      backend: skills("Python", "Django", "Node.js", "Express.js"),
     },
   },
   {
@@ -96,105 +155,183 @@ export const services: Service[] = [
     description:
       "Embark on a journey of innovation with my app development services. I specialize in creating sleek, user-friendly interfaces combined with advanced functionalities, bringing your app ideas to life. My commitment to excellence ensures the development of intuitive, high-performing applications that elevate your digital presence.",
     tech: {
-      frontend: ["Flutter", "React Native", "Dart"],
-      backend: ["Python", "Node.js", "Firebase", "Express.js"],
+      frontend: skills("Flutter", "React Native", "Dart"),
+      backend: skills("Python", "Node.js", "Firebase", "Express.js"),
     },
   },
   {
     icon: "cpu",
     title: "ML & Robotics Enthusiast",
     description:
-      "Discover the world of ML & Robotics with our passionate enthusiasts. Unleash innovation as we seamlessly integrate machine learning and robotics. Join us in shaping the future of technology.",
+      "I explore machine learning and robotics with the same energy I bring to shipping products — integrating models, sensors and software into practical prototypes that move ideas off the whiteboard.",
     tech: {
-      frontend: ["Flutter", "React Native"],
-      backend: [
+      frontend: skills("Flutter", "React Native"),
+      backend: skills(
         "Python",
         "TensorFlow",
         "PyTorch",
         "ROS (Robot Operating System)",
         "OpenCV",
         "Arduino",
-      ],
+      ),
     },
   },
 ];
 
+// TODO: replace with real work history
+export type ExperienceEntry = {
+  role: string;
+  company: string;
+  dates: string;
+  description: string;
+};
+
+export const experience: ExperienceEntry[] = [
+  {
+    role: "Full-Stack Developer",
+    company: "Independent / Client work",
+    dates: "2021 — Present",
+    description:
+      "Placeholder — shipping web and mobile products end to end for clients across fintech, content and community platforms.",
+  },
+  {
+    role: "Mobile Developer",
+    company: "Contract engagements",
+    dates: "2020 — 2023",
+    description:
+      "Placeholder — Flutter and React Native apps from prototype through store-ready releases, including fintech wallet flows.",
+  },
+  {
+    role: "Software Developer",
+    company: "Early projects & open collaboration",
+    dates: "2019 — 2021",
+    description:
+      "Placeholder — Django, scraping and landing-page work that established the foundation for later product delivery.",
+  },
+];
+
 export type Project = {
+  slug: string;
   title: string;
   description: string;
+  body: string;
   image: string;
-  /** Omitted when there is no live URL to link to. */
+  gallery: string[];
+  techStack: string[];
+  role: string;
+  year: string;
+  /** Optional outcome / impact line. */
+  results?: string;
+  /** Live external URL, when one still exists. */
   href?: string;
-  /** Shown in place of the link when `href` is absent. */
-  linkNote?: string;
 };
 
 export const projects: Project[] = [
   {
+    slug: "dyingearth",
     title: "Dyingearth",
     description: "Soil monitoring Django app giving insight into soil health.",
+    body: "Dyingearth is a soil-monitoring web application built with Django. It surfaces health insights so farmers and researchers can make better decisions from field data — dashboards, readings and a clean path from raw input to actionable signal.",
     image: "/projects/portfolio1.webp",
+    gallery: ["/projects/portfolio1.webp"],
+    techStack: ["Python", "Django"],
+    role: "Full-stack Developer",
+    year: "2024",
+    results: "Live soil-health monitoring tool deployed for ongoing field use.",
     href: "https://dyingearthcodes.onrender.com",
   },
   {
-    title: "Squidbonk",
-    description:
-      "SQUIBONK is an innovative crypto project revolutionizing the ecosystem with its unique features.",
-    image: "/projects/portfolio7.webp",
-    // No live URL: the original link pointed at the Dyingearth site, and the
-    // squibonk.com domain has since been taken over by an unrelated site.
-    linkNote: "Site no longer available",
-  },
-  {
+    slug: "goodcoin",
     title: "GoodCoin",
     description: "Telegram bot and tapping game built for a crypto community.",
+    body: "GoodCoin is a Telegram mini-app and tapping game designed for a crypto community — engagement loops, bot flows and a lightweight game client that keeps players inside Telegram without a separate install.",
     image: "/projects/portfolio8.webp",
+    gallery: ["/projects/portfolio8.webp"],
+    techStack: ["JavaScript", "Node.js", "Telegram"],
+    role: "Full-stack Developer",
+    year: "2024",
     href: "https://t.me/theonlygoodcoin_bot/games?startapp=594387e8",
   },
   {
+    slug: "cashpoint",
     title: "CashPoint",
     description:
       "Flutter fintech app — an innovative wallet for making secure transactions.",
+    body: "CashPoint is a Flutter fintech wallet focused on secure peer transactions. The work covered product UI, auth and transfer flows with an emphasis on clarity and trust for everyday money movement.",
     image: "/projects/portfolio4.webp",
+    gallery: ["/projects/portfolio4.webp"],
+    techStack: ["Flutter", "Dart", "Firebase"],
+    role: "Mobile Developer",
+    year: "2023",
+    results: "Private fintech prototype with secure transaction flows.",
   },
   {
-    title: "React Portfolio",
-    description: "React portfolio site with cool animations and a responsive design.",
-    image: "/projects/portfolio2.webp",
-    href: "https://egwimcodes.netlify.app",
-  },
-  {
+    slug: "micdavmrei",
     title: "Micdavmrei",
     description: "Youth empowerment site — empowering young people.",
+    body: "Micdavmrei is a youth-empowerment website built to present programmes and opportunities with a clear, accessible information architecture for young people and organisers alike.",
     image: "/projects/portfolio10.webp",
+    gallery: ["/projects/portfolio10.webp"],
+    techStack: ["HTML", "CSS", "JavaScript"],
+    role: "Web Developer",
+    year: "2023",
     href: "https://micdavmrei.com/index1.html",
   },
   {
+    slug: "gpt4-landing",
     title: "GPT 4",
     description: "React GPT-4 landing site with a bold, fully responsive design.",
+    body: "A marketing landing experience for a GPT-4 concept — bold visual hierarchy, responsive layout and a React front end tuned for conversion-oriented storytelling.",
     image: "/projects/portfolio3.webp",
+    gallery: ["/projects/portfolio3.webp"],
+    techStack: ["ReactJS", "JavaScript", "CSS"],
+    role: "Frontend Developer",
+    year: "2023",
     href: "https://gpt4landing.netlify.app",
   },
   {
+    slug: "scrap-enxor",
     title: "Scrap Enxor",
     description: "Python website scraper for extracting structured data from the web.",
+    body: "Scrap Enxor is a Python scraping tool for pulling structured data from websites — resilient selectors, exportable output and a workflow aimed at research and automation tasks.",
     image: "/projects/portfolio9.webp",
+    gallery: ["/projects/portfolio9.webp"],
+    techStack: ["Python"],
+    role: "Backend Developer",
+    year: "2022",
+    results: "Internal scraping utility for structured data extraction.",
   },
   {
+    slug: "portfolio-site",
     title: "Portfolio Site",
     description:
       "Plain HTML, CSS and JS professional portfolio site, fully responsive.",
+    body: "An earlier personal portfolio built with plain HTML, CSS and JavaScript — fully responsive, performance-minded and a foundation for later product and brand work.",
     image: "/projects/portfolio5.webp",
+    gallery: ["/projects/portfolio5.webp"],
+    techStack: ["HTML", "CSS", "JavaScript"],
+    role: "Frontend Developer",
+    year: "2022",
     href: "https://snowwisdom.netlify.app",
   },
   {
+    slug: "wordpress-blog",
     title: "WordPress Blog",
     description:
       "WordPress blog demonstrating high-level web development and quality delivery.",
+    body: "A WordPress content site delivered end to end — theme setup, content structure and production hosting for a polished publishing experience.",
     image: "/projects/portfolio11.webp",
+    gallery: ["/projects/portfolio11.webp"],
+    techStack: ["WordPress", "PHP", "CSS"],
+    role: "Web Developer",
+    year: "2021",
     href: "https://nijasun.com/",
   },
 ];
+
+export function getProject(slug: string): Project | undefined {
+  return projects.find((project) => project.slug === slug);
+}
 
 export const contact = {
   heading: "Contact",
