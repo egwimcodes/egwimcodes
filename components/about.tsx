@@ -33,7 +33,7 @@ export function About() {
             </Reveal>
           ))}
 
-          <Reveal delay={0.25}>
+          <Reveal delay={0.12}>
             <dl className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3">
               {about.stats.map((stat) => (
                 <div
@@ -54,7 +54,7 @@ export function About() {
             </dl>
           </Reveal>
 
-          <Reveal delay={0.3}>
+          <Reveal delay={0.16}>
             <a
               href={site.cv}
               download

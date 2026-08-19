@@ -2,7 +2,6 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { Logo } from "@/components/logo";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { CONTAINER } from "@/components/section";
@@ -13,7 +12,8 @@ export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const visible = useRef(new Set<string>());
-  const reduceMotion = useReducedMotion();
+  const list = useRef<HTMLUListElement>(null);
+  const [pill, setPill] = useState<{ left: number; width: number } | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -63,6 +63,18 @@ export function Nav() {
     };
   }, [open]);
 
+  // Track the active link's box so one pill can slide between them in CSS.
+  useEffect(() => {
+    const measure = () => {
+      const target = list.current?.querySelector<HTMLElement>(`[data-nav="${active}"]`);
+      if (target) setPill({ left: target.offsetLeft, width: target.offsetWidth });
+    };
+
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, [active]);
+
   const close = useCallback(() => setOpen(false), []);
 
   return (
@@ -79,28 +91,25 @@ export function Nav() {
         </a>
 
         <nav aria-label="Primary" className="hidden md:block">
-          <ul className="flex items-center gap-1">
+          <ul ref={list} className="relative flex items-center gap-1">
+            {pill ? (
+              <span
+                aria-hidden
+                className="ec-nav-pill"
+                style={{ transform: `translateX(${pill.left}px)`, width: pill.width }}
+              />
+            ) : null}
             {navLinks.map(({ id, label }) => (
               <li key={id}>
                 <a
                   href={`#${id}`}
+                  data-nav={id}
                   aria-current={active === id ? "true" : undefined}
-                  className={`relative rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                  className={`block rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                     active === id ? "text-cyan" : "text-muted hover:text-fg"
                   }`}
                 >
                   {label}
-                  {active === id ? (
-                    <motion.span
-                      layoutId="nav-active"
-                      className="absolute inset-0 -z-10 rounded-full bg-cyan/10 ring-1 ring-cyan/25"
-                      transition={
-                        reduceMotion
-                          ? { duration: 0 }
-                          : { type: "spring", stiffness: 380, damping: 32 }
-                      }
-                    />
-                  ) : null}
                 </a>
               </li>
             ))}
@@ -122,38 +131,33 @@ export function Nav() {
         </div>
       </div>
 
-      <AnimatePresence>
-        {open ? (
-          <motion.nav
-            id="mobile-nav"
-            aria-label="Mobile"
-            initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -12 }}
-            transition={{ duration: 0.22, ease: "easeOut" }}
-            className="border-b border-line bg-bg/95 backdrop-blur-xl md:hidden"
-          >
-            <ul className={`${CONTAINER} flex flex-col py-3`}>
-              {navLinks.map(({ id, label }) => (
-                <li key={id}>
-                  <a
-                    href={`#${id}`}
-                    onClick={close}
-                    aria-current={active === id ? "true" : undefined}
-                    className={`block rounded-xl px-4 py-3 text-base font-medium transition-colors ${
-                      active === id
-                        ? "bg-cyan/10 text-cyan"
-                        : "text-muted hover:bg-surface hover:text-fg"
-                    }`}
-                  >
-                    {label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </motion.nav>
-        ) : null}
-      </AnimatePresence>
+      {/* Kept mounted, with `visibility` hiding it from tab order when closed,
+          so it can animate in both directions without an animation library. */}
+      <nav
+        id="mobile-nav"
+        aria-label="Mobile"
+        data-open={open}
+        className="ec-sheet absolute inset-x-0 top-full border-b border-line bg-bg/95 backdrop-blur-xl md:hidden"
+      >
+        <ul className={`${CONTAINER} flex flex-col py-3`}>
+          {navLinks.map(({ id, label }) => (
+            <li key={id}>
+              <a
+                href={`#${id}`}
+                onClick={close}
+                aria-current={active === id ? "true" : undefined}
+                className={`block rounded-xl px-4 py-3 text-base font-medium transition-colors ${
+                  active === id
+                    ? "bg-cyan/10 text-cyan"
+                    : "text-muted hover:bg-surface hover:text-fg"
+                }`}
+              >
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </header>
   );
 }

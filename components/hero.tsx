@@ -1,7 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import { motion, useReducedMotion } from "motion/react";
 import { ArrowRight, Download } from "lucide-react";
 import { SocialLinks } from "@/components/social-links";
 import { Typewriter } from "@/components/typewriter";
@@ -21,32 +18,12 @@ const HEADING_3 = "text-[1.3rem] font-bold sm:text-[1.43rem] md:text-[1.76rem] x
 const HEADING_1 =
   "text-[2.5rem] font-bold leading-[1.3] sm:text-[2.75rem] md:text-[3.08rem] xl:text-[3.5rem]";
 
+/** Drifting brand-gradient blobs. Animated in CSS so the hero stays server-only. */
 function AnimatedBackdrop() {
-  const reduceMotion = useReducedMotion();
-
-  const blobs = [
-    {
-      className: "-top-32 left-[8%] size-[34rem] bg-cyan/25",
-      animate: { x: [0, 70, -30, 0], y: [0, -40, 30, 0], scale: [1, 1.12, 0.94, 1] },
-      duration: 24,
-    },
-    {
-      className: "top-24 right-[4%] size-[30rem] bg-tech-blue/25",
-      animate: { x: [0, -60, 35, 0], y: [0, 45, -25, 0], scale: [1, 0.92, 1.1, 1] },
-      duration: 29,
-    },
-  ];
-
   return (
     <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-      {blobs.map((blob, index) => (
-        <motion.div
-          key={index}
-          className={`absolute rounded-full blur-[130px] ${blob.className}`}
-          animate={reduceMotion ? undefined : blob.animate}
-          transition={{ duration: blob.duration, repeat: Infinity, ease: "easeInOut" }}
-        />
-      ))}
+      <div className="ec-blob-a absolute -top-32 left-[8%] size-[34rem] rounded-full bg-cyan/25 blur-[130px]" />
+      <div className="ec-blob-b absolute top-24 right-[4%] size-[30rem] rounded-full bg-tech-blue/25 blur-[130px]" />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-bg" />
     </div>
   );

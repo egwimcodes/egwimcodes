@@ -73,6 +73,96 @@
   animation: ec-caret 0.7s step-end infinite;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .ec-caret {
+    display: none;
+  }
+}
+
+/* Scroll reveals. The hidden state is applied by the client only to elements
+   still below the fold, so server HTML is never shipped invisible. */
+[data-reveal] {
+  transition:
+    opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0s),
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0s);
+}
+
+[data-reveal="hidden"] {
+  opacity: 0;
+  transform: translateY(var(--reveal-y, 24px));
+}
+
+/* Hero backdrop blobs, in CSS so the hero needs no client JS to animate. */
+@keyframes ec-blob-a {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(70px, -40px, 0) scale(1.12);
+  }
+  66% {
+    transform: translate3d(-30px, 30px, 0) scale(0.94);
+  }
+}
+
+@keyframes ec-blob-b {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(-60px, 45px, 0) scale(0.92);
+  }
+  66% {
+    transform: translate3d(35px, -25px, 0) scale(1.1);
+  }
+}
+
+.ec-blob-a {
+  animation: ec-blob-a 24s ease-in-out infinite;
+}
+
+.ec-blob-b {
+  animation: ec-blob-b 29s ease-in-out infinite;
+}
+
+/* The sliding pill behind the active desktop nav link. */
+.ec-nav-pill {
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 9999px;
+  background-color: color-mix(in oklab, var(--color-cyan) 10%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--color-cyan) 25%, transparent);
+  transition:
+    transform 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+    width 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* The mobile sheet stays mounted so it can animate both ways without JS.
+   Delaying visibility lets it fade out before leaving the a11y tree. */
+.ec-sheet {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-12px);
+  transition:
+    opacity 0.22s ease-out,
+    transform 0.22s ease-out,
+    visibility 0s linear 0.22s;
+}
+
+.ec-sheet[data-open="true"] {
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.22s ease-out,
+    transform 0.22s ease-out,
+    visibility 0s;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;

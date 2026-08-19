@@ -51,12 +51,12 @@ export const hero = {
   ],
   blurb:
     "With a proven track record of excellence in both web and mobile development, I consistently deliver high-quality solutions that meet client needs and exceed expectations.",
-  portrait: { src: "/Wisdom-Egwim.png", width: 600, height: 731 },
+  portrait: { src: "/Wisdom-Egwim.webp", width: 600, height: 731 },
 } as const;
 
 export const about = {
   role: "Full Stack Developer",
-  portrait: { src: "/Wisdom-Egwim-Portfolio.png", width: 500, height: 500 },
+  portrait: { src: "/Wisdom-Egwim-Portfolio.webp", width: 500, height: 500 },
   paragraphs: [
     "Wisdom Egwim is a highly skilled, ambitious Software Developer with a robust background in Web 3, Flutter, React Native, ReactJS, Next.js, Python, Django, JavaScript, FastAPI, Dart, Tailwind CSS and Bootstrap.",
     "My expertise goes beyond traditional development, offering a deep understanding of machine learning and robotics, allowing me to craft innovative and efficient solutions for a wide range of projects.",
@@ -133,14 +133,14 @@ export const projects: Project[] = [
   {
     title: "Dyingearth",
     description: "Soil monitoring Django app giving insight into soil health.",
-    image: "/projects/portfolio1.png",
+    image: "/projects/portfolio1.webp",
     href: "https://dyingearthcodes.onrender.com",
   },
   {
     title: "Squidbonk",
     description:
       "SQUIBONK is an innovative crypto project revolutionizing the ecosystem with its unique features.",
-    image: "/projects/portfolio7.png",
+    image: "/projects/portfolio7.webp",
     // No live URL: the original link pointed at the Dyingearth site, and the
     // squibonk.com domain has since been taken over by an unrelated site.
     linkNote: "Site no longer available",
@@ -148,50 +148,50 @@ export const projects: Project[] = [
   {
     title: "GoodCoin",
     description: "Telegram bot and tapping game built for a crypto community.",
-    image: "/projects/portfolio8.png",
+    image: "/projects/portfolio8.webp",
     href: "https://t.me/theonlygoodcoin_bot/games?startapp=594387e8",
   },
   {
     title: "CashPoint",
     description:
       "Flutter fintech app — an innovative wallet for making secure transactions.",
-    image: "/projects/portfolio4.png",
+    image: "/projects/portfolio4.webp",
   },
   {
     title: "React Portfolio",
     description: "React portfolio site with cool animations and a responsive design.",
-    image: "/projects/portfolio2.png",
+    image: "/projects/portfolio2.webp",
     href: "https://egwimcodes.netlify.app",
   },
   {
     title: "Micdavmrei",
     description: "Youth empowerment site — empowering young people.",
-    image: "/projects/portfolio10.png",
+    image: "/projects/portfolio10.webp",
     href: "https://micdavmrei.com/index1.html",
   },
   {
     title: "GPT 4",
     description: "React GPT-4 landing site with a bold, fully responsive design.",
-    image: "/projects/portfolio3.png",
+    image: "/projects/portfolio3.webp",
     href: "https://gpt4landing.netlify.app",
   },
   {
     title: "Scrap Enxor",
     description: "Python website scraper for extracting structured data from the web.",
-    image: "/projects/portfolio9.png",
+    image: "/projects/portfolio9.webp",
   },
   {
     title: "Portfolio Site",
     description:
       "Plain HTML, CSS and JS professional portfolio site, fully responsive.",
-    image: "/projects/portfolio5.png",
+    image: "/projects/portfolio5.webp",
     href: "https://snowwisdom.netlify.app",
   },
   {
     title: "WordPress Blog",
     description:
       "WordPress blog demonstrating high-level web development and quality delivery.",
-    image: "/projects/portfolio11.png",
+    image: "/projects/portfolio11.webp",
     href: "https://nijasun.com/",
   },
 ];
