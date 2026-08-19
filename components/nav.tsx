@@ -90,7 +90,8 @@ export function Nav() {
           <Logo />
         </a>
 
-        <nav aria-label="Primary" className="hidden md:block">
+        {/* lg: seven labels + pill need more than 768px; tablet keeps the sheet. */}
+        <nav aria-label="Primary" className="hidden lg:block">
           <ul ref={list} className="relative flex items-center gap-1">
             {pill ? (
               <span
@@ -124,7 +125,7 @@ export function Nav() {
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? "Close menu" : "Open menu"}
-            className="inline-flex size-10 items-center justify-center rounded-full border border-line text-fg transition-colors hover:border-cyan/60 hover:text-cyan md:hidden"
+            className="inline-flex size-10 items-center justify-center rounded-full border border-line text-fg transition-colors hover:border-cyan/60 hover:text-cyan lg:hidden"
           >
             {open ? <X className="size-5" aria-hidden /> : <Menu className="size-5" aria-hidden />}
           </button>
@@ -137,7 +138,7 @@ export function Nav() {
         id="mobile-nav"
         aria-label="Mobile"
         data-open={open}
-        className="ec-sheet absolute inset-x-0 top-full border-b border-line bg-bg/95 backdrop-blur-xl md:hidden"
+        className="ec-sheet absolute inset-x-0 top-full border-b border-line bg-bg/95 backdrop-blur-xl lg:hidden"
       >
         <ul className={`${CONTAINER} flex flex-col py-3`}>
           {navLinks.map(({ id, label }) => (
