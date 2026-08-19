@@ -19,8 +19,7 @@ const QUALITY = 80;
 
 /** Standalone images that aren't in the projects folder. */
 const SINGLES = [
-  // Keeps its PNG sibling, which the Person JSON-LD still points at.
-  { from: "public/Wisdom-Egwim.png", to: "public/Wisdom-Egwim.webp", width: 900, keepSource: true },
+  { from: "public/Wisdom-Egwim.png", to: "public/Wisdom-Egwim.webp", width: 900 },
   { from: "public/Wisdom-Egwim-Portfolio.png", to: "public/Wisdom-Egwim-Portfolio.webp", width: 1000 },
 ];
 

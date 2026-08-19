@@ -11,6 +11,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 1,
     },
+    {
+      url: `${SITE_URL}/work`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
     ...navLinks
       .filter(({ id }) => id !== "home")
       .map(({ id }) => ({

@@ -53,16 +53,33 @@ export default async function WorkProjectPage({ params }: PageProps) {
   const project = getProject(slug);
   if (!project) notFound();
 
+  const creativeWorkJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: project.title,
+    description: project.description,
+    url: `${SITE_URL}/work/${project.slug}`,
+    image: `${SITE_URL}${project.image}`,
+    dateCreated: project.year,
+    author: {
+      "@type": "Person",
+      name: site.person,
+      url: SITE_URL,
+    },
+    ...(project.liveUrl ? { sameAs: project.liveUrl } : {}),
+    keywords: project.techStack.join(", "),
+  };
+
   return (
     <>
       <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-bg/80 backdrop-blur-xl">
         <div className={`${CONTAINER} flex h-18 items-center justify-between gap-4`}>
-          <Link href="/#portfolio" aria-label="egwimcodes — back to portfolio">
+          <Link href="/work" aria-label="egwimcodes — work archive">
             <Logo />
           </Link>
           <div className="flex items-center gap-2">
             <ThemeToggle />
-            <Link href="/#portfolio" className={`${BTN_GHOST} hidden sm:inline-flex`}>
+            <Link href="/work" className={`${BTN_GHOST} hidden sm:inline-flex`}>
               <ArrowLeft className="size-4" aria-hidden />
               All projects
             </Link>
@@ -73,7 +90,7 @@ export default async function WorkProjectPage({ params }: PageProps) {
       <main className="pt-28 pb-24 sm:pt-32">
         <div className={CONTAINER}>
           <Link
-            href="/#portfolio"
+            href="/work"
             className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-muted transition-colors hover:text-cyan sm:hidden"
           >
             <ArrowLeft className="size-4" aria-hidden />
@@ -171,9 +188,9 @@ export default async function WorkProjectPage({ params }: PageProps) {
               </div>
 
               <div className="flex flex-col gap-3">
-                {project.href ? (
+                {project.liveUrl ? (
                   <a
-                    href={project.href}
+                    href={project.liveUrl}
                     target="_blank"
                     rel="noreferrer noopener"
                     className={BTN_PRIMARY}
@@ -190,6 +207,10 @@ export default async function WorkProjectPage({ params }: PageProps) {
           </div>
         </div>
       </main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkJsonLd) }}
+      />
     </>
   );
 }

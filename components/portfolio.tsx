@@ -59,6 +59,16 @@ export function Portfolio() {
           </Reveal>
         ))}
       </div>
+
+      <p className="mt-10 text-center">
+        <Link
+          href="/work"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-cyan transition-colors hover:text-fg"
+        >
+          Browse the full work archive
+          <ArrowUpRight className="size-4" aria-hidden />
+        </Link>
+      </p>
     </Section>
   );
 }

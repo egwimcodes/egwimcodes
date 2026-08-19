@@ -88,7 +88,7 @@ const personJsonLd = {
   name: site.person,
   alternateName: site.name,
   url: SITE_URL,
-  image: `${SITE_URL}/Wisdom-Egwim.png`,
+  image: `${SITE_URL}/Wisdom-Egwim.webp`,
   sameAs: [
     "https://twitter.com/egwimcodes",
     "https://www.linkedin.com/in/egwimcodes",

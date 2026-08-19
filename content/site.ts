@@ -222,8 +222,8 @@ export type Project = {
   year: string;
   /** Optional outcome / impact line. */
   results?: string;
-  /** Live external URL, when one still exists. */
-  href?: string;
+  /** Live external project URL, when one still exists. */
+  liveUrl?: string;
 };
 
 export const projects: Project[] = [
@@ -238,7 +238,7 @@ export const projects: Project[] = [
     role: "Full-stack Developer",
     year: "2024",
     results: "Live soil-health monitoring tool deployed for ongoing field use.",
-    href: "https://dyingearthcodes.onrender.com",
+    liveUrl: "https://dyingearthcodes.onrender.com",
   },
   {
     slug: "goodcoin",
@@ -250,7 +250,7 @@ export const projects: Project[] = [
     techStack: ["JavaScript", "Node.js", "Telegram"],
     role: "Full-stack Developer",
     year: "2024",
-    href: "https://t.me/theonlygoodcoin_bot/games?startapp=594387e8",
+    liveUrl: "https://t.me/theonlygoodcoin_bot/games?startapp=594387e8",
   },
   {
     slug: "cashpoint",
@@ -275,7 +275,7 @@ export const projects: Project[] = [
     techStack: ["HTML", "CSS", "JavaScript"],
     role: "Web Developer",
     year: "2023",
-    href: "https://micdavmrei.com/index1.html",
+    liveUrl: "https://micdavmrei.com/index1.html",
   },
   {
     slug: "gpt4-landing",
@@ -287,7 +287,7 @@ export const projects: Project[] = [
     techStack: ["ReactJS", "JavaScript", "CSS"],
     role: "Frontend Developer",
     year: "2023",
-    href: "https://gpt4landing.netlify.app",
+    liveUrl: "https://gpt4landing.netlify.app",
   },
   {
     slug: "scrap-enxor",
@@ -312,7 +312,7 @@ export const projects: Project[] = [
     techStack: ["HTML", "CSS", "JavaScript"],
     role: "Frontend Developer",
     year: "2022",
-    href: "https://snowwisdom.netlify.app",
+    liveUrl: "https://snowwisdom.netlify.app",
   },
   {
     slug: "wordpress-blog",
@@ -325,7 +325,7 @@ export const projects: Project[] = [
     techStack: ["WordPress", "PHP", "CSS"],
     role: "Web Developer",
     year: "2021",
-    href: "https://nijasun.com/",
+    liveUrl: "https://nijasun.com/",
   },
 ];
 
