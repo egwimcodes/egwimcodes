@@ -67,7 +67,7 @@ export const about = {
   ],
   stats: [
     { value: "5+", label: "Years building" },
-    { value: "10+", label: "Shipped projects" },
+    { value: "30+", label: "Shipped projects" },
     { value: "3", label: "Core disciplines" },
   ],
 } as const;
