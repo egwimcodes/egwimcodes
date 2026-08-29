@@ -25,11 +25,7 @@ export function Experience() {
           return (
             <li key={`${entry.company}-${entry.dates}`} className="relative">
               <Reveal delay={index * 0.08}>
-                <div
-                  className={`grid gap-6 pb-12 sm:grid-cols-2 sm:gap-10 ${
-                    left ? "" : "sm:[&>*:first-child]:col-start-2"
-                  }`}
-                >
+                <div className="grid gap-6 pb-12 sm:grid-cols-2 sm:gap-10">
                   <span
                     aria-hidden
                     className="absolute top-2 left-[0.45rem] size-3 rounded-full border-2 border-cyan bg-bg sm:left-1/2 sm:-translate-x-1/2"
@@ -37,7 +33,9 @@ export function Experience() {
 
                   <article
                     className={`ml-8 rounded-2xl border border-line bg-elevated p-6 sm:ml-0 ${
-                      left ? "sm:mr-6 sm:text-right" : "sm:ml-6"
+                      left
+                        ? "sm:mr-6 sm:text-right"
+                        : "sm:col-start-2 sm:ml-6"
                     }`}
                   >
                     <p className="text-xs font-semibold tracking-[0.18em] text-cyan uppercase">
