@@ -43,15 +43,11 @@ export const metadata: Metadata = {
     "machine learning",
     "robotics",
   ],
-  alternates: {
-    canonical: SITE_URL,
-  },
+  // Page-specific canonical / og:url / titles live on each route so children
+  // do not inherit the home URL or headline.
   openGraph: {
     type: "website",
-    url: SITE_URL,
     siteName: site.name,
-    title: site.headline,
-    description: site.description,
     locale: "en_US",
     images: [
       {
@@ -66,8 +62,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: site.twitterHandle,
     creator: site.twitterHandle,
-    title: site.headline,
-    description: site.description,
     images: ["/brand/og.png"],
   },
   robots: {

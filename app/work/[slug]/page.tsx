@@ -35,7 +35,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       siteName: site.name,
       title,
       description,
-      images: [{ url: image, alt: `${project.title} screenshot` }],
+      images: [
+        {
+          url: image,
+          alt: `${project.title} screenshot`,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
@@ -60,13 +65,14 @@ export default async function WorkProjectPage({ params }: PageProps) {
     description: project.description,
     url: `${SITE_URL}/work/${project.slug}`,
     image: `${SITE_URL}${project.image}`,
-    dateCreated: project.year,
+    // Only a year is known — use Jan 1 so dateCreated stays valid ISO-8601.
+    dateCreated: `${project.year}-01-01`,
     author: {
       "@type": "Person",
       name: site.person,
       url: SITE_URL,
     },
-    ...(project.liveUrl ? { sameAs: project.liveUrl } : {}),
+    ...(project.liveUrl ? { sameAs: [project.liveUrl] } : {}),
     keywords: project.techStack.join(", "),
   };
 
@@ -152,14 +158,14 @@ export default async function WorkProjectPage({ params }: PageProps) {
 
               {project.gallery.length > 1 ? (
                 <div className="mt-10 grid gap-4 sm:grid-cols-2">
-                  {project.gallery.slice(1).map((src) => (
+                  {project.gallery.slice(1).map((src, index) => (
                     <div
                       key={src}
                       className="relative aspect-[16/10] overflow-hidden rounded-xl border border-line"
                     >
                       <Image
                         src={src}
-                        alt={`${project.title} gallery image`}
+                        alt={`${project.title} gallery image ${index + 2}`}
                         fill
                         sizes="(min-width: 640px) 50vw, 100vw"
                         className="object-cover"
@@ -172,9 +178,9 @@ export default async function WorkProjectPage({ params }: PageProps) {
 
             <aside className="space-y-8 lg:sticky lg:top-28 lg:self-start">
               <div className="rounded-2xl border border-line bg-elevated p-6">
-                <h2 className="text-xs font-semibold tracking-[0.18em] text-muted uppercase">
+                <h3 className="text-xs font-semibold tracking-[0.18em] text-muted uppercase">
                   Tech stack
-                </h2>
+                </h3>
                 <ul className="mt-4 flex flex-wrap gap-2">
                   {project.techStack.map((item) => (
                     <li

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { Hero } from "@/components/hero";
 import { About } from "@/components/about";
@@ -7,6 +8,31 @@ import { Portfolio } from "@/components/portfolio";
 import { Experience } from "@/components/experience";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
+import { SITE_URL, site } from "@/content/site";
+
+export const metadata: Metadata = {
+  alternates: { canonical: `${SITE_URL}/` },
+  openGraph: {
+    type: "website",
+    url: `${SITE_URL}/`,
+    title: site.headline,
+    description: site.description,
+    images: [
+      {
+        url: "/brand/og.png",
+        width: 1200,
+        height: 630,
+        alt: `${site.name} — ${site.tagline.join(" · ")}`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.headline,
+    description: site.description,
+    images: ["/brand/og.png"],
+  },
+};
 
 export default function Home() {
   return (

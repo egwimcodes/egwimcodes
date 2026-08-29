@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { SITE_URL, navLinks, projects } from "@/content/site";
+import { SITE_URL, projects } from "@/content/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
@@ -17,14 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.85,
     },
-    ...navLinks
-      .filter(({ id }) => id !== "home")
-      .map(({ id }) => ({
-        url: `${SITE_URL}/#${id}`,
-        lastModified,
-        changeFrequency: "monthly" as const,
-        priority: 0.8,
-      })),
+    // Hash fragments (#about, etc.) are not separate crawlable URLs — omit them.
     ...projects.map((project) => ({
       url: `${SITE_URL}/work/${project.slug}`,
       lastModified,

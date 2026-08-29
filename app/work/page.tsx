@@ -6,16 +6,35 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { BTN_GHOST, CONTAINER } from "@/components/section";
 import { SITE_URL, projects, site } from "@/content/site";
 
+const workTitle = `Work | ${site.name}`;
+const workDescription = `Case studies and selected projects by ${site.person} — web, mobile and data work.`;
+
 export const metadata: Metadata = {
   title: "Work",
-  description: `Case studies and selected projects by ${site.person} — web, mobile and data work.`,
+  description: workDescription,
   alternates: { canonical: `${SITE_URL}/work` },
   openGraph: {
     type: "website",
     url: `${SITE_URL}/work`,
     siteName: site.name,
-    title: `Work | ${site.name}`,
+    title: workTitle,
     description: `Case studies and selected projects by ${site.person}.`,
+    images: [
+      {
+        url: "/brand/og.png",
+        width: 1200,
+        height: 630,
+        alt: `${site.name} — work archive`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: site.twitterHandle,
+    creator: site.twitterHandle,
+    title: workTitle,
+    description: `Case studies and selected projects by ${site.person}.`,
+    images: ["/brand/og.png"],
   },
 };
 

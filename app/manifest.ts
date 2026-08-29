@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { SITE_URL, site } from "@/content/site";
+import { site } from "@/content/site";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
@@ -30,6 +30,6 @@ export default function manifest(): MetadataRoute.Manifest {
         purpose: "any",
       },
     ],
-    id: SITE_URL,
+    id: "/",
   };
 }

@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState, type FormEvent } from "react";
-import emailjs from "@emailjs/browser";
 import { CircleCheck, LoaderCircle, Send, TriangleAlert } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { BTN_PRIMARY, Section, SectionHeading } from "@/components/section";
@@ -36,6 +35,8 @@ export function Contact() {
     setError(null);
 
     try {
+      // Lazy-load EmailJS so the contact form chunk stays small until submit.
+      const emailjs = (await import("@emailjs/browser")).default;
       await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form, PUBLIC_KEY);
       form.reset();
       setStatus("success");
