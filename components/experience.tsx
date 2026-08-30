@@ -9,7 +9,7 @@ export function Experience() {
         eyebrow="Experience"
         title="Where I’ve"
         accent="built"
-        description="A short timeline of roles and engagements. Dates and employers below are placeholders until the real history is filled in."
+        description="A short timeline of roles and product engagements — from company platforms and AI ops to mobile marketplace apps and regional media."
       />
 
       <ol className="relative mx-auto max-w-3xl space-y-0">

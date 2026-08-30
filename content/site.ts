@@ -190,7 +190,6 @@ export const services: Service[] = [
   },
 ];
 
-// TODO: replace with real work history
 export type ExperienceEntry = {
   role: string;
   company: string;
@@ -200,25 +199,32 @@ export type ExperienceEntry = {
 
 export const experience: ExperienceEntry[] = [
   {
-    role: "Full-Stack Developer",
-    company: "Independent / Client work",
-    dates: "2021 — Present",
+    role: "Frontend Developer",
+    company: "IntellaNex Technologies",
+    dates: "2025 — Present",
     description:
-      "Placeholder — shipping web and mobile products end to end for clients across fintech, content and community platforms.",
+      "Building Next.js product and marketing surfaces for IntellaNex — software, AI, IoT and Home OS. Shipped the company platform at intellanex.com and ElectionOS, the campaign command center for real-time polling-unit capture, verification and field ops.",
+  },
+  {
+    role: "Frontend Developer",
+    company: "Anthena",
+    dates: "2025 — Present",
+    description:
+      "Frontend for Anthena’s AI business-ops and workforce platform (Lagos) — Next.js, Tailwind, Framer Motion, Radix and shadcn. Shipped marketing and in-app UI for planning, talent matching and delivery workflows at useanthena.com.",
   },
   {
     role: "Mobile Developer",
-    company: "Contract engagements",
-    dates: "2020 — 2023",
+    company: "OJP TECH LTD",
+    dates: "2025",
     description:
-      "Placeholder — Flutter and React Native apps from prototype through store-ready releases, including fintech wallet flows.",
+      "React Native product UI for BuyOne and Buyone Logistics — Nigerian marketplace, VTU utilities, wallet and South-East delivery, plus dispatcher jobs, live map tracking and payouts. Both apps live on Google Play.",
   },
   {
-    role: "Software Developer",
-    company: "Early projects & open collaboration",
-    dates: "2019 — 2021",
+    role: "Full-stack Developer",
+    company: "CoreTruth",
+    dates: "2024",
     description:
-      "Placeholder — Django, scraping and landing-page work that established the foundation for later product delivery.",
+      "PHP/Laravel publishing stack for CoreTruth — regional and national news focused on Anambra and the South-East. Structured editorial workflows for politics, society and development coverage at coretruth.net.",
   },
 ];
 
