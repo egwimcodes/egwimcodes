@@ -292,6 +292,29 @@ export const projects: Project[] = [
     liveUrl: "https://t.me/theonlygoodcoin_bot/games?startapp=594387e8",
   },
   {
+    slug: "coretruth",
+    title: "CoreTruth",
+    description:
+      "Nigerian online news platform covering regional and national stories across politics, society and development.",
+    body: "CoreTruth is a live online media platform focused on Nigeria — with particular depth on Anambra State and the South-East. The site publishes political, social and developmental reporting: local governance, regional policy, civic events, chambers of commerce, youth affairs and leadership bodies such as NYCN Anambra. Built with PHP and Laravel, it delivers a structured publishing stack for editors to ship timely regional and national coverage to readers on the web (and alongside the brand’s presence on Facebook and Instagram).",
+    image: "/projects/portfolio12.webp",
+    gallery: [
+      {
+        src: "/projects/portfolio12.webp",
+        alt: "CoreTruth online news platform",
+        caption: "Regional and national news publishing for Nigeria’s South-East.",
+      },
+    ],
+    techStack: ["PHP", "Laravel"],
+    role: "Full-stack Developer",
+    year: "2024",
+    visibility: "public",
+    repo: { visibility: "private" },
+    results:
+      "Live news platform at coretruth.net serving regional and national readership.",
+    liveUrl: "https://coretruth.net",
+  },
+  {
     slug: "cashpoint",
     title: "CashPoint",
     description:
@@ -304,6 +327,7 @@ export const projects: Project[] = [
         alt: "CashPoint fintech wallet screens",
         caption: "Wallet UI for secure peer transfers.",
       },
+      
     ],
     techStack: ["Flutter", "Dart", "Firebase"],
     role: "Mobile Developer",
