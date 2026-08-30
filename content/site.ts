@@ -60,7 +60,7 @@ export const about = {
   role: "Full Stack Developer",
   portrait: { src: "/Wisdom-Egwim-Portfolio.webp", width: 500, height: 500 },
   paragraphs: [
-    "Wisdom Egwim is a highly skilled, ambitious Software Developer with a robust background in Web 3, Flutter, React Native, ReactJS, Next.js, Python, Django, JavaScript, FastAPI, Dart, Tailwind CSS and Bootstrap.",
+    "Wisdom Egwim is a highly skilled, ambitious Software Developer with a robust background in Web 3, Flutter, React Native, ReactJS, Next.js, Tailwind CSS, Framer Motion, Radix UI, shadcn/ui, Python, Django, JavaScript, FastAPI, Dart and Bootstrap.",
     "My expertise goes beyond traditional development, offering a deep understanding of machine learning and robotics, allowing me to craft innovative and efficient solutions for a wide range of projects.",
     "With over 5 years of experience in software development, I have consistently demonstrated my expertise through the successful conception and execution of innovative projects. My commitment to excellence is reflected in the quality of my work, where I blend efficient coding practices with a forward-thinking approach. I continuously explore the intersection of software development and emerging technologies, ensuring that every project I undertake is both cutting-edge and impactful.",
     "My commitment to following the latest tech trends showcases my readiness for long-lasting success as a developer.",
@@ -83,6 +83,9 @@ export const skillGroups = [
       "Web 3",
       "Vue.js",
       "Tailwind CSS",
+      "Framer Motion",
+      "Radix UI",
+      "shadcn/ui",
       "JavaScript",
       "Bootstrap",
     ],
@@ -145,7 +148,16 @@ export const services: Service[] = [
     description:
       "Experience exceptional web development services that go beyond the ordinary. I specialize in creating responsive, innovative designs that enhance your online presence and help you stand out in today's digital landscape.",
     tech: {
-      frontend: skills("ReactJS", "Next.js", "Web 3", "Vue.js", "Tailwind CSS"),
+      frontend: skills(
+        "ReactJS",
+        "Next.js",
+        "Web 3",
+        "Vue.js",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Radix UI",
+        "shadcn/ui",
+      ),
       backend: skills("Python", "Django", "Node.js", "Express.js"),
     },
   },
@@ -244,6 +256,51 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    slug: "anthena",
+    title: "Anthena",
+    description:
+      "AI-powered business operations and workforce platform for growing companies and startups.",
+    body: "Anthena is an AI-powered business operations and workforce platform based in Lagos, Nigeria — an all-in-one operating layer for growing companies and startups. The product brings together smart work planning (AI roadmaps from project descriptions), talent sourcing and matching without freelance bidding wars, delivery coordination pipelines, and operational workflows with escrow. As frontend developer, I shipped the product UI in Next.js: Tailwind CSS for a coherent design system, Framer Motion for purposeful motion, and accessible Radix / shadcn-style primitives for polished marketing and in-app surfaces. The platform offers a free tier alongside Pro upgrades, with early-access waitlist and referral credits for teams getting started.",
+    image: "/projects/portfolio13.webp",
+    gallery: [
+      {
+        src: "/projects/portfolio13.webp",
+        alt: "Anthena AI operations platform",
+        caption: "AI-powered operating layer for hiring, planning and delivery.",
+      },
+      {
+        src: "/projects/portfolio13a.webp",
+        alt: "Anthena product interface",
+        caption: "Talent matching and collaboration workspace.",
+      },
+      {
+        src: "/projects/portfolio13b.webp",
+        alt: "Anthena marketing and product UI",
+        caption: "Motion-led marketing and product surfaces.",
+      },
+      {
+        src: "/projects/portfolio13c.webp",
+        alt: "Anthena platform screens",
+        caption: "From project brief to matched talent and delivery.",
+      },
+    ],
+    techStack: [
+      "Next.js",
+      "ReactJS",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Radix UI",
+      "shadcn/ui",
+    ],
+    role: "Frontend Developer",
+    year: "2025",
+    visibility: "public",
+    repo: { visibility: "private" },
+    results:
+      "Live AI operations platform at useanthena.com — early-access waitlist and Pro upgrades.",
+    liveUrl: "https://useanthena.com",
+  },
   {
     slug: "dyingearth",
     title: "Dyingearth",
