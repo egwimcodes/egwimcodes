@@ -5,7 +5,7 @@ import { Logo } from "@/components/logo";
 import { ProjectCard } from "@/components/project-card";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { BTN_GHOST, CONTAINER } from "@/components/section";
-import { SITE_URL, projects, site } from "@/content/site";
+import { SITE_URL, projectsByFeatured, site } from "@/content/site";
 
 const workTitle = `Work | ${site.name}`;
 const workDescription = `Case studies and selected projects by ${site.person} — web, mobile and data work.`;
@@ -71,7 +71,7 @@ export default function WorkIndexPage() {
           </p>
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {projects.map((project) => (
+            {projectsByFeatured().map((project) => (
               <ProjectCard key={project.slug} project={project} />
             ))}
           </div>

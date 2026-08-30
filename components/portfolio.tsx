@@ -3,9 +3,11 @@ import { ArrowUpRight } from "lucide-react";
 import { ProjectCard } from "@/components/project-card";
 import { Reveal } from "@/components/reveal";
 import { Section, SectionHeading } from "@/components/section";
-import { projects } from "@/content/site";
+import { projectsByFeatured } from "@/content/site";
 
 export function Portfolio() {
+  const listed = projectsByFeatured();
+
   return (
     <Section id="portfolio" className="bg-surface">
       <SectionHeading
@@ -16,7 +18,7 @@ export function Portfolio() {
       />
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project, index) => (
+        {listed.map((project, index) => (
           <Reveal key={project.slug} delay={(index % 3) * 0.08} className="h-full">
             <ProjectCard project={project} />
           </Reveal>
