@@ -45,7 +45,9 @@ and partner use — they are not loaded at runtime.
 
 ## Deployment
 
-`docker build` produces a standalone Node image serving on port 3000; the VPS
-workflow maps it to `127.0.0.1:3001`. The `NEXT_PUBLIC_EMAILJS_*` values are
-inlined at build time and must be passed as `--build-arg` (see
-`.github/workflows/deploy.yml` and the matching GitHub repo secrets).
+`docker build` produces a standalone Node image serving on port 3000. The VPS
+workflow at `.github/workflows/deploy.yml` builds in `/opt/egwimcodes`, attaches
+the container to the `intellanex-public` Traefik network (no host port publish),
+and routes `egwimcodes.dev` / `www.egwimcodes.dev` via Traefik labels. The
+`NEXT_PUBLIC_EMAILJS_*` values are inlined at build time and must be passed as
+`--build-arg` (see the workflow and matching GitHub repo secrets).
