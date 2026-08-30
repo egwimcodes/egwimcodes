@@ -3,8 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ExternalLink } from "lucide-react";
+import { SocialIcon } from "@/components/brand-icons";
 import { Logo } from "@/components/logo";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { VisibilityBadge } from "@/components/visibility-badge";
 import { BTN_GHOST, BTN_PRIMARY, CONTAINER } from "@/components/section";
 import { SITE_URL, getProject, projects, site } from "@/content/site";
 
@@ -76,6 +78,9 @@ export default async function WorkProjectPage({ params }: PageProps) {
     keywords: project.techStack.join(", "),
   };
 
+  const hasGallery = project.gallery.length > 0;
+  const repoUrl = project.repo.url;
+
   return (
     <>
       <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-bg/80 backdrop-blur-xl">
@@ -108,7 +113,17 @@ export default async function WorkProjectPage({ params }: PageProps) {
             Case study · {project.year}
           </p>
 
-          <h1 className="max-w-3xl font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
+          <div className="flex flex-wrap items-center gap-2">
+            <VisibilityBadge visibility={project.visibility} />
+            <VisibilityBadge
+              visibility={project.repo.visibility}
+              label={
+                project.repo.visibility === "public" ? "Public repo" : "Private repo"
+              }
+            />
+          </div>
+
+          <h1 className="mt-4 max-w-3xl font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
             {project.title}
           </h1>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
@@ -156,23 +171,45 @@ export default async function WorkProjectPage({ params }: PageProps) {
                 {project.body}
               </p>
 
-              {project.gallery.length > 1 ? (
-                <div className="mt-10 grid gap-4 sm:grid-cols-2">
-                  {project.gallery.slice(1).map((src, index) => (
-                    <div
-                      key={src}
-                      className="relative aspect-[16/10] overflow-hidden rounded-xl border border-line"
-                    >
-                      <Image
-                        src={src}
-                        alt={`${project.title} gallery image ${index + 2}`}
-                        fill
-                        sizes="(min-width: 640px) 50vw, 100vw"
-                        className="object-cover"
-                      />
-                    </div>
-                  ))}
-                </div>
+              {hasGallery ? (
+                <section className="mt-12" aria-labelledby="gallery-heading">
+                  <h2
+                    id="gallery-heading"
+                    className="font-display text-2xl font-bold"
+                  >
+                    Gallery
+                  </h2>
+                  <ul
+                    className={`mt-6 grid gap-5 ${
+                      project.gallery.length > 1 ? "sm:grid-cols-2" : "grid-cols-1"
+                    }`}
+                  >
+                    {project.gallery.map((item) => (
+                      <li key={item.src + (item.caption ?? "")}>
+                        <figure>
+                          <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-line bg-elevated">
+                            <Image
+                              src={item.src}
+                              alt={item.alt ?? `${project.title} gallery image`}
+                              fill
+                              sizes={
+                                project.gallery.length > 1
+                                  ? "(min-width: 640px) 50vw, 100vw"
+                                  : "(min-width: 1024px) 42rem, 100vw"
+                              }
+                              className="object-cover"
+                            />
+                          </div>
+                          {item.caption ? (
+                            <figcaption className="mt-3 text-sm leading-relaxed text-muted">
+                              {item.caption}
+                            </figcaption>
+                          ) : null}
+                        </figure>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
               ) : null}
             </div>
 
@@ -193,6 +230,26 @@ export default async function WorkProjectPage({ params }: PageProps) {
                 </ul>
               </div>
 
+              <div className="rounded-2xl border border-line bg-elevated p-6">
+                <h3 className="text-xs font-semibold tracking-[0.18em] text-muted uppercase">
+                  Visibility
+                </h3>
+                <dl className="mt-4 space-y-3 text-sm">
+                  <div className="flex items-center justify-between gap-3">
+                    <dt className="text-muted">Project</dt>
+                    <dd>
+                      <VisibilityBadge visibility={project.visibility} />
+                    </dd>
+                  </div>
+                  <div className="flex items-center justify-between gap-3">
+                    <dt className="text-muted">Repository</dt>
+                    <dd>
+                      <VisibilityBadge visibility={project.repo.visibility} />
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+
               <div className="flex flex-col gap-3">
                 {project.liveUrl ? (
                   <a
@@ -202,6 +259,18 @@ export default async function WorkProjectPage({ params }: PageProps) {
                     className={BTN_PRIMARY}
                   >
                     Visit live project
+                    <ExternalLink className="size-4" aria-hidden />
+                  </a>
+                ) : null}
+                {repoUrl ? (
+                  <a
+                    href={repoUrl}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className={BTN_GHOST}
+                  >
+                    <SocialIcon name="github" className="size-4" />
+                    View repository
                     <ExternalLink className="size-4" aria-hidden />
                   </a>
                 ) : null}

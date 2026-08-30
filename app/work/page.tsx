@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { Logo } from "@/components/logo";
+import { ProjectCard } from "@/components/project-card";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { BTN_GHOST, CONTAINER } from "@/components/section";
 import { SITE_URL, projects, site } from "@/content/site";
@@ -69,30 +70,11 @@ export default function WorkIndexPage() {
             Selected case studies. Each entry links to a short write-up — role, stack and outcome.
           </p>
 
-          <ul className="mt-12 divide-y divide-line border-y border-line">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {projects.map((project) => (
-              <li key={project.slug}>
-                <Link
-                  href={`/work/${project.slug}`}
-                  className="group flex flex-col gap-2 py-6 transition-colors hover:text-cyan sm:flex-row sm:items-baseline sm:justify-between sm:gap-8"
-                >
-                  <div className="min-w-0">
-                    <span className="font-display text-xl font-bold tracking-tight sm:text-2xl">
-                      {project.title}
-                    </span>
-                    <p className="mt-1 text-sm leading-relaxed text-muted group-hover:text-muted">
-                      {project.description}
-                    </p>
-                  </div>
-                  <span className="inline-flex shrink-0 items-center gap-2 text-sm font-medium text-muted group-hover:text-cyan">
-                    <span className="tabular-nums">{project.year}</span>
-                    <ArrowUpRight className="size-4" aria-hidden />
-                    <span className="sr-only">{`View ${project.title} case study`}</span>
-                  </span>
-                </Link>
-              </li>
+              <ProjectCard key={project.slug} project={project} />
             ))}
-          </ul>
+          </div>
         </div>
       </main>
     </>

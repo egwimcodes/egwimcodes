@@ -210,16 +210,33 @@ export const experience: ExperienceEntry[] = [
   },
 ];
 
+export type Visibility = "public" | "private";
+
+export type ProjectGalleryImage = {
+  src: string;
+  alt?: string;
+  caption?: string;
+};
+
+export type ProjectRepo = {
+  visibility: Visibility;
+  /** Only set when a real, reachable repository URL exists. */
+  url?: string;
+};
+
 export type Project = {
   slug: string;
   title: string;
   description: string;
   body: string;
   image: string;
-  gallery: string[];
+  gallery: ProjectGalleryImage[];
   techStack: string[];
   role: string;
   year: string;
+  /** Whether the product / engagement itself is public-facing. */
+  visibility: Visibility;
+  repo: ProjectRepo;
   /** Optional outcome / impact line. */
   results?: string;
   /** Live external project URL, when one still exists. */
@@ -233,10 +250,21 @@ export const projects: Project[] = [
     description: "Soil monitoring Django app giving insight into soil health.",
     body: "Dyingearth is a soil-monitoring web application built with Django. It surfaces health insights so farmers and researchers can make better decisions from field data — dashboards, readings and a clean path from raw input to actionable signal.",
     image: "/projects/portfolio1.webp",
-    gallery: ["/projects/portfolio1.webp"],
+    gallery: [
+      {
+        src: "/projects/portfolio1.webp",
+        alt: "Dyingearth soil-health dashboard",
+        caption: "Field readings surfaced as a soil-health dashboard.",
+      },
+    ],
     techStack: ["Python", "Django"],
     role: "Full-stack Developer",
     year: "2024",
+    visibility: "public",
+    repo: {
+      visibility: "public",
+      url: "https://github.com/egwimcodes/Dyingearthcodes",
+    },
     results: "Live soil-health monitoring tool deployed for ongoing field use.",
     liveUrl: "https://dyingearthcodes.onrender.com",
   },
@@ -246,10 +274,21 @@ export const projects: Project[] = [
     description: "Telegram bot and tapping game built for a crypto community.",
     body: "GoodCoin is a Telegram mini-app and tapping game designed for a crypto community — engagement loops, bot flows and a lightweight game client that keeps players inside Telegram without a separate install.",
     image: "/projects/portfolio8.webp",
-    gallery: ["/projects/portfolio8.webp"],
+    gallery: [
+      {
+        src: "/projects/portfolio8.webp",
+        alt: "GoodCoin Telegram tapping game UI",
+        caption: "In-Telegram tapping game and community engagement loop.",
+      },
+    ],
     techStack: ["JavaScript", "Node.js", "Telegram"],
     role: "Full-stack Developer",
     year: "2024",
+    visibility: "public",
+    repo: {
+      visibility: "public",
+      url: "https://github.com/egwimcodes/mini-good",
+    },
     liveUrl: "https://t.me/theonlygoodcoin_bot/games?startapp=594387e8",
   },
   {
@@ -259,10 +298,18 @@ export const projects: Project[] = [
       "Flutter fintech app — an innovative wallet for making secure transactions.",
     body: "CashPoint is a Flutter fintech wallet focused on secure peer transactions. The work covered product UI, auth and transfer flows with an emphasis on clarity and trust for everyday money movement.",
     image: "/projects/portfolio4.webp",
-    gallery: ["/projects/portfolio4.webp"],
+    gallery: [
+      {
+        src: "/projects/portfolio4.webp",
+        alt: "CashPoint fintech wallet screens",
+        caption: "Wallet UI for secure peer transfers.",
+      },
+    ],
     techStack: ["Flutter", "Dart", "Firebase"],
     role: "Mobile Developer",
     year: "2023",
+    visibility: "private",
+    repo: { visibility: "private" },
     results: "Private fintech prototype with secure transaction flows.",
   },
   {
@@ -271,10 +318,12 @@ export const projects: Project[] = [
     description: "Youth empowerment site — empowering young people.",
     body: "Micdavmrei is a youth-empowerment website built to present programmes and opportunities with a clear, accessible information architecture for young people and organisers alike.",
     image: "/projects/portfolio10.webp",
-    gallery: ["/projects/portfolio10.webp"],
+    gallery: [],
     techStack: ["HTML", "CSS", "JavaScript"],
     role: "Web Developer",
     year: "2023",
+    visibility: "public",
+    repo: { visibility: "private" },
     liveUrl: "https://micdavmrei.com/index1.html",
   },
   {
@@ -283,10 +332,21 @@ export const projects: Project[] = [
     description: "React GPT-4 landing site with a bold, fully responsive design.",
     body: "A marketing landing experience for a GPT-4 concept — bold visual hierarchy, responsive layout and a React front end tuned for conversion-oriented storytelling.",
     image: "/projects/portfolio3.webp",
-    gallery: ["/projects/portfolio3.webp"],
+    gallery: [
+      {
+        src: "/projects/portfolio3.webp",
+        alt: "GPT-4 marketing landing page",
+        caption: "Bold, conversion-oriented GPT-4 landing layout.",
+      },
+    ],
     techStack: ["ReactJS", "JavaScript", "CSS"],
     role: "Frontend Developer",
     year: "2023",
+    visibility: "public",
+    repo: {
+      visibility: "public",
+      url: "https://github.com/egwimcodes/GPT4",
+    },
     liveUrl: "https://gpt4landing.netlify.app",
   },
   {
@@ -295,10 +355,15 @@ export const projects: Project[] = [
     description: "Python website scraper for extracting structured data from the web.",
     body: "Scrap Enxor is a Python scraping tool for pulling structured data from websites — resilient selectors, exportable output and a workflow aimed at research and automation tasks.",
     image: "/projects/portfolio9.webp",
-    gallery: ["/projects/portfolio9.webp"],
+    gallery: [],
     techStack: ["Python"],
     role: "Backend Developer",
     year: "2022",
+    visibility: "private",
+    repo: {
+      visibility: "public",
+      url: "https://github.com/egwimcodes/ScrapEnxor",
+    },
     results: "Internal scraping utility for structured data extraction.",
   },
   {
@@ -308,10 +373,21 @@ export const projects: Project[] = [
       "Plain HTML, CSS and JS professional portfolio site, fully responsive.",
     body: "An earlier personal portfolio built with plain HTML, CSS and JavaScript — fully responsive, performance-minded and a foundation for later product and brand work.",
     image: "/projects/portfolio5.webp",
-    gallery: ["/projects/portfolio5.webp"],
+    gallery: [
+      {
+        src: "/projects/portfolio5.webp",
+        alt: "Earlier personal portfolio site",
+        caption: "Responsive HTML/CSS/JS portfolio layout.",
+      },
+    ],
     techStack: ["HTML", "CSS", "JavaScript"],
     role: "Frontend Developer",
     year: "2022",
+    visibility: "public",
+    repo: {
+      visibility: "public",
+      url: "https://github.com/egwimcodes/snowwisdom.com",
+    },
     liveUrl: "https://snowwisdom.netlify.app",
   },
   {
@@ -321,10 +397,12 @@ export const projects: Project[] = [
       "WordPress blog demonstrating high-level web development and quality delivery.",
     body: "A WordPress content site delivered end to end — theme setup, content structure and production hosting for a polished publishing experience.",
     image: "/projects/portfolio11.webp",
-    gallery: ["/projects/portfolio11.webp"],
+    gallery: [],
     techStack: ["WordPress", "PHP", "CSS"],
     role: "Web Developer",
     year: "2021",
+    visibility: "public",
+    repo: { visibility: "private" },
     liveUrl: "https://nijasun.com/",
   },
 ];
