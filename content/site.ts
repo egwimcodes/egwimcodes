@@ -257,6 +257,48 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "buyone",
+    title: "BuyOne",
+    description:
+      "Nigerian all-in-one app — marketplace shopping, airtime and data recharge, bills, wallet and delivery.",
+    body: "BuyOne is an all-in-one mobile platform for Nigeria under the line Everything You Need, In ONE PLACE — buy, sell, recharge and get it delivered from a single app. The product combines a multi-vendor marketplace (electronics, fashion, groceries and gadgets with ratings, discounts, favourites and cart), VTU utilities (airtime, data plans across HOT / Daily / Weekly / Monthly tiers, and bill payments including Starlink), a user wallet with Add Money and transaction history, South East dispatch delivery with order confirmation and tracking, and in-app buyer–vendor chat. As mobile developer, I shipped the product UI: featured product grids, recharge and purchase flows, wallet dashboard and delivery confirmation for a clean, mobile-first experience.",
+    image: "/projects/portfolio15.webp",
+    gallery: [
+      {
+        src: "/projects/portfolio15.webp",
+        alt: "BuyOne all-in-one app feature overview",
+        caption: "Buy, sell, recharge and delivery — everything in one place.",
+      },
+      {
+        src: "/projects/portfolio15a.webp",
+        alt: "BuyOne marketplace featured products",
+        caption: "Shop electronics, fashion and gadgets from trusted sellers.",
+      },
+      {
+        src: "/projects/portfolio15b.webp",
+        alt: "BuyOne buy and sell product grid",
+        caption: "Featured products with ratings, discounts and cart actions.",
+      },
+      {
+        src: "/projects/portfolio15c.webp",
+        alt: "BuyOne data plans and bill recharge",
+        caption: "Airtime, data bundles and bills without leaving home.",
+      },
+      {
+        src: "/projects/portfolio15d.webp",
+        alt: "BuyOne wallet, marketplace and utilities",
+        caption: "Wallet balance, product search and recharge utilities together.",
+      },
+    ],
+    techStack: ["React Native", "TypeScript"],
+    role: "Mobile Developer",
+    year: "2025",
+    visibility: "public",
+    repo: { visibility: "private" },
+    results:
+      "Public-facing Nigerian marketplace and utilities app — buy, sell, recharge and delivery in one product.",
+  },
+  {
     slug: "anthena",
     title: "Anthena",
     description:
