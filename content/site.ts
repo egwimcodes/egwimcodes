@@ -439,13 +439,13 @@ export const projects: Project[] = [
     gallery: [
       {
         src: "/projects/portfolio17.webp",
-        alt: "ElectionOS Command Center dashboard with live map and election countdown",
-        caption: "Live federal election watch — verified votes, agents, incidents and tactical map.",
+        alt: "ElectionOS landing hero securing the people's mandate",
+        caption: "Public product surface — 176,846 polling units, AES-256 and INEC-aligned forms.",
       },
       {
         src: "/projects/portfolio17a.webp",
-        alt: "ElectionOS landing hero securing the people's mandate",
-        caption: "Public product surface — 176,846 polling units, AES-256 and INEC-aligned forms.",
+        alt: "ElectionOS Command Center dashboard with live map and election countdown",
+        caption: "Live federal election watch — verified votes, agents, incidents and tactical map.",
       },
       {
         src: "/projects/portfolio17b.webp",
