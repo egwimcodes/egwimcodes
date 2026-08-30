@@ -372,6 +372,8 @@ export const projects: Project[] = [
     year: "2025",
     visibility: "public",
     repo: { visibility: "private" },
+    liveUrl:
+      "https://play.google.com/store/apps/details?id=com.ojptechnologies.buyone&pcampaignid=web_share",
     results:
       "Public-facing Nigerian marketplace and utilities app — buy, sell, recharge and delivery in one product.",
   },
@@ -399,6 +401,8 @@ export const projects: Project[] = [
     year: "2025",
     visibility: "public",
     repo: { visibility: "private" },
+    liveUrl:
+      "https://play.google.com/store/apps/details?id=com.ojptechnology.buyone_dispatch&pcampaignid=web_share",
     results:
       "Public-facing Nigerian logistics app on Google Play — jobs, live tracking and instant payouts.",
   },
