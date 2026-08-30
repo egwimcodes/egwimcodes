@@ -302,6 +302,54 @@ export const projects: Project[] = [
     liveUrl: "https://useanthena.com",
   },
   {
+    slug: "intellanex",
+    title: "IntellaNex",
+    description:
+      "Company platform for IntellaNex Technologies — software, AI, IoT, robotics and smart-home systems.",
+    body: "IntellaNex Technologies builds end-to-end technology ecosystems — software, AI-powered platforms, enterprise systems, mobile applications, IoT, robotics and intelligent automation for modern homes and businesses. The public site presents their full stack: custom software and cloud platforms, hardware and embedded engineering, connected IoT and robotics, and Home OS smart-home control unifying lighting, climate, security and energy from one app. Specialized platforms such as ElectionOS sit alongside the broader product line. As frontend developer, I contributed to the company web experience in Next.js: Tailwind CSS for a coherent design system, Framer Motion for purposeful motion, and polished marketing surfaces that carry their software-meets-hardware story from landing through solutions.",
+    image: "/projects/portfolio14.webp",
+    gallery: [
+      {
+        src: "/projects/portfolio14.webp",
+        alt: "IntellaNex Technologies company platform",
+        caption: "Software, AI, IoT and robotics under one engineering partner.",
+      },
+      {
+        src: "/projects/portfolio14a.webp",
+        alt: "IntellaNex solutions and product surfaces",
+        caption: "From code to circuit — end-to-end technology ecosystems.",
+      },
+      {
+        src: "/projects/portfolio14b.webp",
+        alt: "IntellaNex Home OS and automation",
+        caption: "Unified smart-home control for lighting, climate, security and energy.",
+      },
+      {
+        src: "/projects/portfolio14c.webp",
+        alt: "IntellaNex platform and engineering process",
+        caption: "Discover, architect, prototype, build and deploy.",
+      },
+      {
+        src: "/projects/portfolio14d.webp",
+        alt: "IntellaNex featured work and company UI",
+        caption: "Selected systems across software, hardware, IoT and automation.",
+      },
+    ],
+    techStack: [
+      "Next.js",
+      "ReactJS",
+      "Tailwind CSS",
+      "Framer Motion",
+    ],
+    role: "Frontend Developer",
+    year: "2025",
+    visibility: "public",
+    repo: { visibility: "private" },
+    results:
+      "Live company platform at intellanex.com — software, AI, IoT, robotics and Home OS.",
+    liveUrl: "https://intellanex.com",
+  },
+  {
     slug: "dyingearth",
     title: "Dyingearth",
     description: "Soil monitoring Django app giving insight into soil health.",
