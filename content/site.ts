@@ -424,6 +424,54 @@ export const projects: Project[] = [
     liveUrl: "https://intellanex.com",
   },
   {
+    slug: "electionos",
+    title: "ElectionOS",
+    description:
+      "Mission-critical campaign command platform by IntellaNex — real-time polling-unit capture, verification and ops for NDC.",
+    body: "ElectionOS is IntellaNex’s campaign command platform for the Nigeria Democratic Congress — built for authorized campaign teams to capture, organize and verify polling-unit data from the field across all 176,846 units nationwide. It is an internal parallel monitoring layer; it does not replace INEC or official electoral processes. The product spans real-time result capture (Form EC8A photo ingest with OCR confidence and human review), AI-verified hierarchical aggregation from polling unit through ward, LGA and state, live spatial mapping with incident triage, and campaign and volunteer operations with role-based access and offline-first field capture. As frontend developer for IntellaNex, I shipped the command-center and marketing experience in Next.js: Tailwind CSS for a dark, high-signal ops UI, Framer Motion for purposeful status and motion, and polished surfaces from the public launch through the live Command Center — verified sheets, agent coverage, incident queues and national rollups in one glass cockpit.",
+    image: "/projects/portfolio17.webp",
+    gallery: [
+      {
+        src: "/projects/portfolio17.webp",
+        alt: "ElectionOS Command Center dashboard with live map and election countdown",
+        caption: "Live federal election watch — verified votes, agents, incidents and tactical map.",
+      },
+      {
+        src: "/projects/portfolio17a.webp",
+        alt: "ElectionOS landing hero securing the people's mandate",
+        caption: "Public product surface — 176,846 polling units, AES-256 and INEC-aligned forms.",
+      },
+      {
+        src: "/projects/portfolio17b.webp",
+        alt: "ElectionOS platform capabilities including OCR capture and incident response",
+        caption: "Result capture, aggregation, spatial map, incidents, roles and offline-first PWA.",
+      },
+      {
+        src: "/projects/portfolio17c.webp",
+        alt: "ElectionOS AI-assisted command view with verified sheets and live incidents",
+        caption: "One glass cockpit — verified sheets, turnout and incident triage under 800ms.",
+      },
+      {
+        src: "/projects/portfolio17d.webp",
+        alt: "ElectionOS secure uplink loading screen",
+        caption: "Command systems online — secure, multi-tenant live ops.",
+      },
+    ],
+    techStack: [
+      "Next.js",
+      "ReactJS",
+      "Tailwind CSS",
+      "Framer Motion",
+    ],
+    role: "Frontend Developer",
+    year: "2026",
+    visibility: "public",
+    repo: { visibility: "private" },
+    results:
+      "Live campaign command platform at electionos.intellanex.com — field capture across 176,846 polling units.",
+    liveUrl: "https://electionos.intellanex.com",
+  },
+  {
     slug: "dyingearth",
     title: "Dyingearth",
     description: "Soil monitoring Django app giving insight into soil health.",
