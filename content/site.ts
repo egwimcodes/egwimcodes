@@ -304,6 +304,33 @@ export const projects: Project[] = [
       "Public-facing Nigerian marketplace and utilities app — buy, sell, recharge and delivery in one product.",
   },
   {
+    slug: "buyone-logistics",
+    title: "Buyone Logistics",
+    description:
+      "Nigerian logistics management app — accept jobs, live map tracking, wallet payouts and dispatcher assignment.",
+    body: "Buyone Logistics is an advanced logistics management platform for onboarding local and international logistics companies into one competitive, transparent ecosystem — under lines like Turn Your Time Into Money, Accept Jobs. Deliver Efficiently., Track Your Route With Live Map and Instant Payment. Drivers and dispatchers manage order details (pickup and delivery across Port Harcourt and beyond), assign dispatchers, follow routes on a live map with vendor and receiver contacts, and confirm arrival at destination. A wallet with Add Money and Withdraw sits alongside Today's Earnings, incoming orders and bank payouts (e.g. Access Bank transfers) so completed deliveries turn into steady money. As mobile developer, I shipped the product UI: job acceptance and order flows, live tracking, wallet dashboard and transaction success screens for a clean, mobile-first dispatcher experience. Live on Google Play under OJP TECH LTD.",
+    image: "/projects/portfolio16.webp",
+    gallery: [
+      {
+        src: "/projects/portfolio16.webp",
+        alt: "Buyone Logistics feature overview",
+        caption: "Accept jobs, live map tracking, wallet and payouts in one app.",
+      },
+      {
+        src: "/projects/portfolio16a.webp",
+        alt: "Buyone Logistics Google Play Store listing",
+        caption: "Live on Google Play — logistics management for drivers and dispatchers.",
+      },
+    ],
+    techStack: ["React Native", "TypeScript"],
+    role: "Mobile Developer",
+    year: "2025",
+    visibility: "public",
+    repo: { visibility: "private" },
+    results:
+      "Public-facing Nigerian logistics app on Google Play — jobs, live tracking and instant payouts.",
+  },
+  {
     slug: "anthena",
     title: "Anthena",
     description:
