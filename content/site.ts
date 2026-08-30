@@ -289,6 +289,11 @@ export const projects: Project[] = [
         alt: "BuyOne wallet, marketplace and utilities",
         caption: "Wallet balance, product search and recharge utilities together.",
       },
+      {
+        src: "/projects/portfolio15e.webp",
+        alt: "BuyOne Google Play Store listing",
+        caption: "Live on Google Play — buy, sell, recharge and delivery in one app.",
+      },
     ],
     techStack: ["React Native", "TypeScript"],
     role: "Mobile Developer",
