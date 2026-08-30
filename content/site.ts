@@ -199,11 +199,11 @@ export type ExperienceEntry = {
 
 export const experience: ExperienceEntry[] = [
   {
-    role: "Frontend Developer",
+    role: "Full Stack Developer",
     company: "IntellaNex Technologies",
     dates: "2025 — Present",
     description:
-      "Building Next.js product and marketing surfaces for IntellaNex — software, AI, IoT and Home OS. Shipped the company platform at intellanex.com and ElectionOS, the campaign command center for real-time polling-unit capture, verification and field ops.",
+      "Full-stack product work for IntellaNex — software, AI, IoT and Home OS. Shipped the company platform at intellanex.com and ElectionOS, the campaign command center for real-time polling-unit capture, verification and field ops.",
   },
   {
     role: "Frontend Developer",
@@ -225,6 +225,13 @@ export const experience: ExperienceEntry[] = [
     dates: "2024",
     description:
       "PHP/Laravel publishing stack for CoreTruth — regional and national news focused on Anambra and the South-East. Structured editorial workflows for politics, society and development coverage at coretruth.net.",
+  },
+  {
+    role: "Full Stack Developer",
+    company: "Nijasun",
+    dates: "2021",
+    description:
+      "Full-stack product work at Nijasun — shipped web surfaces including the WordPress publishing site at nijasun.com.",
   },
 ];
 
@@ -386,7 +393,7 @@ export const projects: Project[] = [
     title: "IntellaNex",
     description:
       "Company platform for IntellaNex Technologies — software, AI, IoT, robotics and smart-home systems.",
-    body: "IntellaNex Technologies builds end-to-end technology ecosystems — software, AI-powered platforms, enterprise systems, mobile applications, IoT, robotics and intelligent automation for modern homes and businesses. The public site presents their full stack: custom software and cloud platforms, hardware and embedded engineering, connected IoT and robotics, and Home OS smart-home control unifying lighting, climate, security and energy from one app. Specialized platforms such as ElectionOS sit alongside the broader product line. As frontend developer, I contributed to the company web experience in Next.js: Tailwind CSS for a coherent design system, Framer Motion for purposeful motion, and polished marketing surfaces that carry their software-meets-hardware story from landing through solutions.",
+    body: "IntellaNex Technologies builds end-to-end technology ecosystems — software, AI-powered platforms, enterprise systems, mobile applications, IoT, robotics and intelligent automation for modern homes and businesses. The public site presents their full stack: custom software and cloud platforms, hardware and embedded engineering, connected IoT and robotics, and Home OS smart-home control unifying lighting, climate, security and energy from one app. Specialized platforms such as ElectionOS sit alongside the broader product line. As full stack developer, I contributed to the company platform in Next.js: Tailwind CSS for a coherent design system, Framer Motion for purposeful motion, and polished marketing surfaces that carry their software-meets-hardware story from landing through solutions.",
     image: "/projects/portfolio14.webp",
     gallery: [
       {
@@ -421,7 +428,7 @@ export const projects: Project[] = [
       "Tailwind CSS",
       "Framer Motion",
     ],
-    role: "Frontend Developer",
+    role: "Full Stack Developer",
     year: "2025",
     visibility: "public",
     repo: { visibility: "private" },
@@ -434,7 +441,7 @@ export const projects: Project[] = [
     title: "ElectionOS",
     description:
       "Mission-critical campaign command platform by IntellaNex — real-time polling-unit capture, verification and ops for NDC.",
-    body: "ElectionOS is IntellaNex’s campaign command platform for the Nigeria Democratic Congress — built for authorized campaign teams to capture, organize and verify polling-unit data from the field across all 176,846 units nationwide. It is an internal parallel monitoring layer; it does not replace INEC or official electoral processes. The product spans real-time result capture (Form EC8A photo ingest with OCR confidence and human review), AI-verified hierarchical aggregation from polling unit through ward, LGA and state, live spatial mapping with incident triage, and campaign and volunteer operations with role-based access and offline-first field capture. As frontend developer for IntellaNex, I shipped the command-center and marketing experience in Next.js: Tailwind CSS for a dark, high-signal ops UI, Framer Motion for purposeful status and motion, and polished surfaces from the public launch through the live Command Center — verified sheets, agent coverage, incident queues and national rollups in one glass cockpit.",
+    body: "ElectionOS is IntellaNex’s campaign command platform for the Nigeria Democratic Congress — built for authorized campaign teams to capture, organize and verify polling-unit data from the field across all 176,846 units nationwide. It is an internal parallel monitoring layer; it does not replace INEC or official electoral processes. The product spans real-time result capture (Form EC8A photo ingest with OCR confidence and human review), AI-verified hierarchical aggregation from polling unit through ward, LGA and state, live spatial mapping with incident triage, and campaign and volunteer operations with role-based access and offline-first field capture. As full stack developer for IntellaNex, I shipped the command-center and marketing experience in Next.js: Tailwind CSS for a dark, high-signal ops UI, Framer Motion for purposeful status and motion, and polished surfaces from the public launch through the live Command Center — verified sheets, agent coverage, incident queues and national rollups in one glass cockpit.",
     image: "/projects/portfolio17.webp",
     gallery: [
       {
@@ -469,7 +476,7 @@ export const projects: Project[] = [
       "Tailwind CSS",
       "Framer Motion",
     ],
-    role: "Frontend Developer",
+    role: "Full Stack Developer",
     year: "2026",
     visibility: "public",
     repo: { visibility: "private" },
