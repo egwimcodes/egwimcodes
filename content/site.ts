@@ -98,7 +98,7 @@ export const skillGroups = [
   {
     id: "mobile",
     label: "Mobile",
-    items: ["Flutter", "React Native", "Dart"],
+    items: ["Flutter", "React Native", "Kotlin", "Dart"],
   },
   {
     id: "aiMl",
@@ -167,7 +167,7 @@ export const services: Service[] = [
     description:
       "Embark on a journey of innovation with my app development services. I specialize in creating sleek, user-friendly interfaces combined with advanced functionalities, bringing your app ideas to life. My commitment to excellence ensures the development of intuitive, high-performing applications that elevate your digital presence.",
     tech: {
-      frontend: skills("Flutter", "React Native", "Dart"),
+      frontend: skills("Flutter", "React Native", "Kotlin", "Dart"),
       backend: skills("Python", "Node.js", "Firebase", "Express.js"),
     },
   },
