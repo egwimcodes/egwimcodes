@@ -333,7 +333,8 @@ export const projects: Project[] = [
     title: "BuyOne",
     description:
       "Nigerian all-in-one app — marketplace shopping, airtime and data recharge, bills, wallet and delivery.",
-    body: "BuyOne is an all-in-one mobile platform for Nigeria under the line Everything You Need, In ONE PLACE — buy, sell, recharge and get it delivered from a single app. The product combines a multi-vendor marketplace (electronics, fashion, groceries and gadgets with ratings, discounts, favourites and cart), VTU utilities (airtime, data plans across HOT / Daily / Weekly / Monthly tiers, and bill payments including Starlink), a user wallet with Add Money and transaction history, South East dispatch delivery with order confirmation and tracking, and in-app buyer–vendor chat. As mobile developer, I shipped the product UI: featured product grids, recharge and purchase flows, wallet dashboard and delivery confirmation for a clean, mobile-first experience.",
+    body: "BuyOne is an all-in-one mobile platform for Nigeria under the line Everything You Need, In ONE PLACE — buy, sell, recharge and get it delivered from a single app. The product combines a multi-vendor marketplace (electronics, fashion, groceries and gadgets with ratings, discounts, favourites and cart), VTU utilities (airtime, data plans across HOT / Daily / Weekly / Monthly tiers, and bill payments including Starlink), a user wallet with Add Money and transaction history, South East dispatch delivery with order confirmation and tracking, and in-app buyer–vendor chat. As mobile developer, I shipped the product UI: featured product grids, recharge and purchase flows, wallet dashboard and delivery confirmation for a clean, mobile-first experience.
+    ",
     image: "/projects/portfolio15.webp",
     gallery: [
       {
